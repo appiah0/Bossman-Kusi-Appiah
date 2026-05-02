@@ -1,0 +1,9 @@
+# robots.txt for Bossman Kusi Appiah official website
+# Allows all search engines to crawl and index the site fully
+
+User-agent: *
+Allow: /
+
+# Point Google to the sitemap
+# Replace "appiah0" and "Bossman-Kusi-Appiah" with your actual GitHub username and repo name
+Sitemap: https://appiah0.github.io/Bossman-Kusi-Appiah/sitemap.xml
