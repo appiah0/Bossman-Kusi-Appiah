@@ -995,6 +995,60 @@
     color: rgba(245,245,240,0.55);
   }
 
+  /* ─── VIEW MORE BUTTON ─── */
+  .view-more-btn {
+    background: var(--gold);
+    color: var(--dark);
+    border: 2px solid var(--gold);
+    padding: 0.85rem 2.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .view-more-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,209,0,0.2); }
+
+  /* ─── GALLERY MORE GRID ─── */
+  .gallery-more-grid {
+    max-width: 1200px;
+    margin: 0.75rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  .gallery-more-grid .gallery-card { height: 240px; }
+  @media (max-width: 900px) {
+    .gallery-more-grid { grid-template-columns: 1fr; }
+    .gallery-more-grid .gallery-card { height: 220px; }
+  }
+
+  /* ─── YOUTUBE CARD ─── */
+  .gal-yt-thumb { position: relative; }
+  .yt-play-btn {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 60px; height: 60px;
+    background: rgba(255,0,0,0.9);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: #fff;
+    transition: transform 0.2s, background 0.2s;
+    z-index: 2;
+  }
+  .gal-yt-thumb:hover .yt-play-btn { transform: translate(-50%, -50%) scale(1.12); background: #ff0000; }
+  .yt-badge {
+    position: absolute; bottom: 0.6rem; left: 0.6rem;
+    background: rgba(255,0,0,0.85);
+    padding: 0.2rem 0.6rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #fff;
+    z-index: 2;
+  }
+
   /* ─── GALLERY ZOOM ICON ─── */
   .gal-img { cursor: pointer; }
   .gallery-zoom {
@@ -1629,59 +1683,129 @@
   <div class="gallery-header fade-in">
     <p class="section-label">In Action</p>
     <h2 class="section-title">On The <span class="title-accent">Track</span></h2>
-    <p style="color:rgba(245,245,240,0.45); margin-top:0.5rem; font-size:0.9rem; letter-spacing:1px;">Click any image to view full screen · Replace the sample video with your own</p>
+    <p style="color:rgba(245,245,240,0.45); margin-top:0.5rem; font-size:0.9rem; letter-spacing:1px;">Click any photo to view full screen · Swipe left/right in lightbox</p>
   </div>
 
-  <div class="gallery-grid fade-in">
+  <!-- ★ VISIBLE GALLERY ITEMS (always shown) ★ -->
+  <div class="gallery-grid fade-in" id="galleryGrid">
 
-    <!-- IMAGE CARDS — clickable lightbox -->
+    <!-- IMAGE 1 -->
     <div class="gallery-card gal-img" data-src="images/trophy.jpg" data-caption="🏆 Lifting the Trophy · Elite Schools League" onclick="openLightbox(this)">
       <div class="gallery-inner" style="background:url('images/trophy.jpg') center/cover no-repeat;"></div>
       <div class="gallery-caption">🏆 Lifting the Trophy · Elite Schools League</div>
       <div class="gallery-zoom">⤢</div>
     </div>
 
+    <!-- IMAGE 2 -->
     <div class="gallery-card gal-img" data-src="images/cape-coast.jpg" data-caption="⏱️ 52.34s · Cape Coast Open Championship 2026" onclick="openLightbox(this)">
       <div class="gallery-inner" style="background:url('images/cape-coast.jpg') center top/cover no-repeat;"></div>
       <div class="gallery-caption">⏱️ 52.34s · Cape Coast Open 2026</div>
       <div class="gallery-zoom">⤢</div>
     </div>
 
+    <!-- IMAGE 3 -->
     <div class="gallery-card gal-img" data-src="images/on-blocks.jpg" data-caption="🎯 On the Blocks · Elite Schools League" onclick="openLightbox(this)">
       <div class="gallery-inner" style="background:url('images/on-blocks.jpg') center/cover no-repeat;"></div>
       <div class="gallery-caption">🎯 On the Blocks · Elite Schools League</div>
       <div class="gallery-zoom">⤢</div>
     </div>
 
+    <!-- IMAGE 4 -->
     <div class="gallery-card gal-img" data-src="images/classroom.jpg" data-caption="📚 The Man Behind the Athlete · Prempeh College" onclick="openLightbox(this)">
       <div class="gallery-inner" style="background:url('images/classroom.jpg') center/cover no-repeat;"></div>
       <div class="gallery-caption">📚 The Man Behind the Athlete</div>
       <div class="gallery-zoom">⤢</div>
     </div>
 
-    <!-- VIDEO CARD — replace src with your own video file -->
+    <!-- OWN VIDEO CARD
+         ════════════════════════════════════════════════════════════════
+         HOW TO CHANGE THE THUMBNAIL (poster image):
+           Find the line below that says:  poster="images/trophy.jpg"
+           Change "images/trophy.jpg" to any of your image files, e.g:
+             poster="images/cape-coast.jpg"
+             poster="images/on-blocks.jpg"
+           Or add a new image to your images/ folder and use that path.
+
+         HOW TO REPLACE THE SAMPLE VIDEO WITH YOUR OWN:
+           1. Create a "videos/" folder next to index.html
+           2. Put your .mp4 file inside it, e.g. "race.mp4"
+           3. Replace the <source src="..."> line below with:
+              <source src="videos/race.mp4" type="video/mp4">
+         ════════════════════════════════════════════════════════════════ -->
     <div class="gallery-card gal-video">
       <div class="gallery-inner" style="background:#0a0a0a; padding:0; overflow:hidden;">
-        <video
-          class="gallery-video-el"
-          playsinline
-          controls
-          preload="metadata"
+        <video class="gallery-video-el" playsinline controls preload="metadata"
           poster="images/trophy.jpg"
           style="width:100%; height:100%; object-fit:cover; display:block;">
-          <!--
-            TO ADD YOUR OWN VIDEO:
-            1. Put your video file in a folder called "videos/" next to index.html
-            2. Replace the src below: <source src="videos/your-video-name.mp4" type="video/mp4">
-          -->
-          <source src="videos/race.mp4" type="video/mp4">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
         </video>
       </div>
       <div class="gallery-caption">📹 Race Highlight · Replace with your own video</div>
     </div>
 
+  </div><!-- end #galleryGrid -->
+
+  <!-- ★ HIDDEN EXTRA ITEMS — shown after clicking "View More" ★
+       To add more photos: copy a gallery-card block and paste it inside #galleryMore.
+       To add more YouTube videos: copy a gal-yt block and change the video ID.
+       The YouTube video ID is the part after "v=" in a YouTube URL.
+       e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ → ID is dQw4w9WgXcQ -->
+  <div class="gallery-more-grid" id="galleryMore" style="display:none;">
+
+    <!-- YOUTUBE VIDEO 1 ─ 400m Hurdles World Record (Karsten Warholm) -->
+    <!-- To change: replace "VbMqhCIopYg" with your own YouTube video ID -->
+    <div class="gallery-card gal-yt" data-ytid="VbMqhCIopYg">
+      <div class="gallery-inner gal-yt-thumb" style="cursor:pointer; background:url('https://img.youtube.com/vi/VbMqhCIopYg/hqdefault.jpg') center/cover no-repeat;" onclick="openYT('VbMqhCIopYg', this)">
+        <div class="yt-play-btn">▶</div>
+        <div class="yt-badge">YouTube</div>
+      </div>
+      <div class="gallery-caption">▶ World Record 400m Hurdles · Karsten Warholm 45.94s</div>
+    </div>
+
+    <!-- YOUTUBE VIDEO 2 ─ 400m Hurdles technique breakdown -->
+    <!-- To change: replace "k7JHmqBYCp0" with your own YouTube video ID -->
+    <div class="gallery-card gal-yt" data-ytid="k7JHmqBYCp0">
+      <div class="gallery-inner gal-yt-thumb" style="cursor:pointer; background:url('https://img.youtube.com/vi/k7JHmqBYCp0/hqdefault.jpg') center/cover no-repeat;" onclick="openYT('k7JHmqBYCp0', this)">
+        <div class="yt-play-btn">▶</div>
+        <div class="yt-badge">YouTube</div>
+      </div>
+      <div class="gallery-caption">▶ 400m Hurdles Technique Masterclass</div>
+    </div>
+
+    <!-- YOUTUBE VIDEO 3 ─ Ghana Athletics highlights -->
+    <!-- To change: replace "Pwe-pA6TaZk" with your own YouTube video ID -->
+    <div class="gallery-card gal-yt" data-ytid="Pwe-pA6TaZk">
+      <div class="gallery-inner gal-yt-thumb" style="cursor:pointer; background:url('https://img.youtube.com/vi/Pwe-pA6TaZk/hqdefault.jpg') center/cover no-repeat;" onclick="openYT('Pwe-pA6TaZk', this)">
+        <div class="yt-play-btn">▶</div>
+        <div class="yt-badge">YouTube</div>
+      </div>
+      <div class="gallery-caption">▶ Ghana Athletics · Rising Stars</div>
+    </div>
+
+    <!-- ADD MORE PHOTOS OR VIDEOS HERE — just copy and paste any gallery-card block above -->
+
+  </div><!-- end #galleryMore -->
+
+  <!-- View More / Show Less button -->
+  <div style="text-align:center; margin-top:2.5rem;" class="fade-in">
+    <button class="view-more-btn" id="galleryToggle" onclick="toggleGallery()">
+      <span id="galleryToggleText">View More ↓</span>
+    </button>
+    <p style="margin-top:1rem; font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; letter-spacing:2px; color:var(--gray); text-transform:uppercase;">
+      <span id="galleryCount">3 more items</span>
+    </p>
   </div>
+
 </section>
+
+<!-- YouTube iframe modal -->
+<div id="ytModal" style="display:none; position:fixed; inset:0; z-index:1001; align-items:center; justify-content:center; background:rgba(0,0,0,0.95);" onclick="closeYT()">
+  <button onclick="closeYT()" style="position:absolute; top:1.2rem; right:1.2rem; width:44px; height:44px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:1.2rem; cursor:pointer; z-index:2;">✕</button>
+  <div style="width:min(90vw,900px); aspect-ratio:16/9; position:relative; z-index:2;" onclick="event.stopPropagation()">
+    <iframe id="ytFrame" src="" allow="autoplay; encrypted-media" allowfullscreen
+      style="width:100%; height:100%; border:none; display:block;"></iframe>
+  </div>
+</div>
 
 <!-- ─── LIGHTBOX ─── -->
 <div id="lightbox" onclick="closeLightbox()">
@@ -1932,7 +2056,8 @@
       <p class="section-label">Voices</p>
       <h2 class="section-title">What They <span class="title-accent">Say</span></h2>
     </div>
-    <div class="testimonials-grid fade-in">
+    <!-- ★ VISIBLE REVIEWS (always shown) ★ -->
+    <div class="testimonials-grid fade-in" id="reviewsVisible">
 
       <div class="tcard">
         <div class="tcard-quote" style="color:var(--gold);">"</div>
@@ -1976,6 +2101,61 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- ★ HIDDEN EXTRA REVIEWS — shown after "Read More" ★
+         To add more reviews: copy a tcard block and paste it inside #reviewsMore -->
+    <div class="testimonials-grid" id="reviewsMore" style="display:none; margin-top:1.5rem;">
+
+      <div class="tcard" style="border-top-color:#60a5fa;">
+        <div class="tcard-quote" style="color:#60a5fa;">"</div>
+        <p class="tcard-text">
+          I have seen many young hurdlers come through the Ashanti Region system, but Bossman's combination of raw speed and technical discipline is something that only comes around once in a generation.
+        </p>
+        <div class="tcard-author">
+          <div class="tcard-avatar" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa); color:var(--white);">EO</div>
+          <div class="tcard-author-info">
+            <div class="tcard-name">Emmanuel Ofori</div>
+            <div class="tcard-role">Ghana Athletics Association Official</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard" style="border-top-color:#f97316;">
+        <div class="tcard-quote" style="color:#f97316;">"</div>
+        <p class="tcard-text">
+          Supporting Bossman has been one of our proudest moments. He represents everything we stand for — discipline, excellence, and Ghanaian pride. We cannot wait to see him on the national stage.
+        </p>
+        <div class="tcard-author">
+          <div class="tcard-avatar" style="background:linear-gradient(135deg,#f97316,#fcd34d); color:var(--dark);">PA</div>
+          <div class="tcard-author-info">
+            <div class="tcard-name">Prempeh Athletics Dept.</div>
+            <div class="tcard-role">Prempeh College, Kumasi</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard" style="border-top-color:#e879f9;">
+        <div class="tcard-quote" style="color:#e879f9;">"</div>
+        <p class="tcard-text">
+          Add your own review here. Ask coaches, teammates, scouts, or supporters to share their thoughts and paste their quote into this card.
+        </p>
+        <div class="tcard-author">
+          <div class="tcard-avatar" style="background:linear-gradient(135deg,#7c3aed,#e879f9); color:var(--white);">?</div>
+          <div class="tcard-author-info">
+            <div class="tcard-name">Your Name Here</div>
+            <div class="tcard-role">Your Role · Your Organisation</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Read More / Show Less button -->
+    <div style="text-align:center; margin-top:2rem;" class="fade-in">
+      <button class="view-more-btn" id="reviewsToggle" onclick="toggleReviews()" style="background:transparent; border-color:rgba(255,255,255,0.2); color:var(--white);">
+        <span id="reviewsToggleText">Read More Reviews ↓</span>
+      </button>
     </div>
 
     <!-- Photo strip -->
@@ -2040,6 +2220,40 @@
         </div>
       </div>
     </div>
+
+    <!-- ★ HIDDEN EXTRA NEWS — shown after "Read More" ★
+         To add more news articles: copy a news card block and paste it inside #newsMore -->
+    <div id="newsMore" style="display:none; margin-top:1.5rem;" class="fade-in">
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem;">
+
+        <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:1.5rem; border-left:3px solid var(--gold);">
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem;">Apr 2026 · Upcoming</div>
+          <h4 style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:1px; margin-bottom:0.5rem;">National Championship Entry Confirmed</h4>
+          <p style="font-size:0.82rem; color:rgba(245,245,240,0.5); line-height:1.6;">Bossman has officially been entered into the Ghana Schools & Colleges Athletics National Championships, representing Prempeh College in the U20 Boys 400m Hurdles.</p>
+        </div>
+
+        <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:1.5rem; border-left:3px solid var(--red);">
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--red); margin-bottom:0.5rem;">Mar 2026 · Training Update</div>
+          <h4 style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:1px; margin-bottom:0.5rem;">New Training Block Begins</h4>
+          <p style="font-size:0.82rem; color:rgba(245,245,240,0.5); line-height:1.6;">Bossman has entered a new high-intensity training block focused on stride consistency and improving his back-straight mechanics ahead of the national season.</p>
+        </div>
+
+        <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:1.5rem; border-left:3px solid var(--gray);">
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin-bottom:0.5rem;">Add Your News Here</div>
+          <h4 style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:1px; margin-bottom:0.5rem;">Your Next Story Goes Here</h4>
+          <p style="font-size:0.82rem; color:rgba(245,245,240,0.5); line-height:1.6;">Copy this card block and fill in your own date, title, and story text to add more news updates whenever something happens.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Read More News button -->
+    <div style="text-align:center; margin-top:2rem;">
+      <button class="view-more-btn" id="newsToggle" onclick="toggleNews()" style="background:transparent; border-color:rgba(255,255,255,0.2); color:var(--white);">
+        <span id="newsToggleText">Read More News ↓</span>
+      </button>
+    </div>
+
   </div>
 </section>
 
@@ -2148,10 +2362,11 @@
   <div class="footer-logo">Bossman Kusi Appiah</div>
   <div class="footer-copy">© 2026 · 400M Hurdles · Ghana 🇬🇭 · Prempeh College</div>
   <div class="footer-socials">
-    <a href="#" class="footer-social">𝕏</a>
-    <a href="#" class="footer-social">IG</a>
-    <a href="#" class="footer-social">FB</a>
-    <a href="#" class="footer-social">YT</a>
+    <a href="#" class="footer-social" title="Twitter / X">𝕏</a>
+    <a href="#" class="footer-social" title="Instagram">IG</a>
+    <a href="#" class="footer-social" title="Facebook">FB</a>
+    <a href="#" class="footer-social" title="YouTube">YT</a>
+    <a href="#" class="footer-social" title="TikTok" style="font-size:0.75rem; letter-spacing:0px;">TikTok</a>
   </div>
 </footer>
 
@@ -2280,6 +2495,53 @@
     btt.style.opacity   = window.scrollY > 600 ? '1' : '0';
   });
   btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ── Toggle: Gallery ──
+  window.toggleGallery = function() {
+    const more = document.getElementById('galleryMore');
+    const btn  = document.getElementById('galleryToggleText');
+    const cnt  = document.getElementById('galleryCount');
+    const open = more.style.display === 'none';
+    more.style.display = open ? 'grid' : 'none';
+    btn.textContent = open ? 'Show Less ↑' : 'View More ↓';
+    if (cnt) cnt.textContent = open ? '' : '3 more items';
+    if (open) more.style.gridTemplateColumns = 'repeat(3, 1fr)';
+  };
+
+  // ── Toggle: Reviews ──
+  window.toggleReviews = function() {
+    const more = document.getElementById('reviewsMore');
+    const btn  = document.getElementById('reviewsToggleText');
+    const open = more.style.display === 'none';
+    more.style.display = open ? 'grid' : 'none';
+    btn.textContent = open ? 'Show Less ↑' : 'Read More Reviews ↓';
+  };
+
+  // ── Toggle: News ──
+  window.toggleNews = function() {
+    const more = document.getElementById('newsMore');
+    const btn  = document.getElementById('newsToggleText');
+    const open = more.style.display === 'none';
+    more.style.display = open ? 'block' : 'none';
+    btn.textContent = open ? 'Show Less ↑' : 'Read More News ↓';
+  };
+
+  // ── YouTube Modal ──
+  window.openYT = function(videoId, el) {
+    const modal = document.getElementById('ytModal');
+    const frame = document.getElementById('ytFrame');
+    frame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeYT = function() {
+    document.getElementById('ytFrame').src = '';
+    document.getElementById('ytModal').style.display = 'none';
+    document.body.style.overflow = '';
+  };
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeYT();
+  });
 
   // ── Lightbox ──
   const imgCards = Array.from(document.querySelectorAll('.gal-img'));
