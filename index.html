@@ -995,6 +995,90 @@
     color: rgba(245,245,240,0.55);
   }
 
+  /* ─── GALLERY ZOOM ICON ─── */
+  .gal-img { cursor: pointer; }
+  .gallery-zoom {
+    position: absolute;
+    top: 0.75rem; right: 0.75rem;
+    width: 32px; height: 32px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,209,0,0.4);
+    color: var(--gold);
+    font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 3;
+    border-radius: 2px;
+  }
+  .gal-img:hover .gallery-zoom { opacity: 1; }
+  .gal-img:hover .gallery-inner { transform: scale(1.04); }
+
+  .gal-video .gallery-inner { padding: 0 !important; }
+  .gallery-video-el { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ─── LIGHTBOX ─── */
+  #lightbox {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    align-items: center; justify-content: center;
+  }
+  #lightbox.open { display: flex; }
+  .lb-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(8px);
+  }
+  .lb-content {
+    position: relative; z-index: 2;
+    max-width: 92vw;
+    max-height: 90vh;
+    display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    animation: lbIn 0.25s ease;
+  }
+  @keyframes lbIn {
+    from { opacity:0; transform: scale(0.94); }
+    to   { opacity:1; transform: scale(1); }
+  }
+  #lb-img {
+    max-width: 92vw;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    border: 1px solid rgba(255,209,0,0.15);
+  }
+  #lb-caption {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245,245,240,0.6);
+    text-align: center;
+  }
+  .lb-close {
+    position: absolute; top: 1.2rem; right: 1.2rem; z-index: 3;
+    width: 44px; height: 44px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--white); font-size: 1.2rem;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .lb-close:hover { background: var(--red); border-color: var(--red); }
+  .lb-prev, .lb-next {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--white); font-size: 2rem;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .lb-prev { left: 1rem; }
+  .lb-next { right: 1rem; }
+  .lb-prev:hover, .lb-next:hover { background: rgba(255,209,0,0.2); border-color: var(--gold); color: var(--gold); }
+
   /* ─── ANIMATIONS ─── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -1082,7 +1166,6 @@
     }
     .gallery-card { height: 240px; }
     .gallery-card:first-child { grid-row: auto; height: 280px; }
-    /* Fix: make gallery-inner fill the card properly */
     .gallery-inner {
       width: 100% !important;
       height: 100% !important;
@@ -1090,6 +1173,8 @@
       background-size: cover !important;
       background-position: center !important;
     }
+    /* Always show zoom icon on touch devices */
+    .gallery-zoom { opacity: 1; }
 
     /* ── TRAINING ── */
     .training-week { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
@@ -1544,33 +1629,71 @@
   <div class="gallery-header fade-in">
     <p class="section-label">In Action</p>
     <h2 class="section-title">On The <span class="title-accent">Track</span></h2>
+    <p style="color:rgba(245,245,240,0.45); margin-top:0.5rem; font-size:0.9rem; letter-spacing:1px;">Click any image to view full screen · Replace the sample video with your own</p>
   </div>
+
   <div class="gallery-grid fade-in">
-    <div class="gallery-card">
+
+    <!-- IMAGE CARDS — clickable lightbox -->
+    <div class="gallery-card gal-img" data-src="images/trophy.jpg" data-caption="🏆 Lifting the Trophy · Elite Schools League" onclick="openLightbox(this)">
       <div class="gallery-inner" style="background:url('images/trophy.jpg') center/cover no-repeat;"></div>
       <div class="gallery-caption">🏆 Lifting the Trophy · Elite Schools League</div>
+      <div class="gallery-zoom">⤢</div>
     </div>
-    <div class="gallery-card">
+
+    <div class="gallery-card gal-img" data-src="images/cape-coast.jpg" data-caption="⏱️ 52.34s · Cape Coast Open Championship 2026" onclick="openLightbox(this)">
       <div class="gallery-inner" style="background:url('images/cape-coast.jpg') center top/cover no-repeat;"></div>
-      <div class="gallery-caption">⏱️ 52.34s · Cape Coast Open Championship 2026</div>
+      <div class="gallery-caption">⏱️ 52.34s · Cape Coast Open 2026</div>
+      <div class="gallery-zoom">⤢</div>
     </div>
-    <div class="gallery-card">
+
+    <div class="gallery-card gal-img" data-src="images/on-blocks.jpg" data-caption="🎯 On the Blocks · Elite Schools League" onclick="openLightbox(this)">
       <div class="gallery-inner" style="background:url('images/on-blocks.jpg') center/cover no-repeat;"></div>
       <div class="gallery-caption">🎯 On the Blocks · Elite Schools League</div>
+      <div class="gallery-zoom">⤢</div>
     </div>
-    <div class="gallery-card">
+
+    <div class="gallery-card gal-img" data-src="images/classroom.jpg" data-caption="📚 The Man Behind the Athlete · Prempeh College" onclick="openLightbox(this)">
       <div class="gallery-inner" style="background:url('images/classroom.jpg') center/cover no-repeat;"></div>
-      <div class="gallery-caption">📚 The Man Behind the Athlete · Prempeh College</div>
+      <div class="gallery-caption">📚 The Man Behind the Athlete</div>
+      <div class="gallery-zoom">⤢</div>
     </div>
-    <div class="gallery-card">
-      <div class="gallery-inner" style="background:linear-gradient(135deg,#1a0a00,#0f0800); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.8rem; cursor:pointer;" onclick="window.open('https://www.facebook.com/Mey3asanteni/videos/814703440907131/','_blank')">
-        <div style="font-size:3rem; position:relative; z-index:1;">▶️</div>
-        <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); text-align:center; position:relative; z-index:1;">Watch Record Run<br><span style="color:var(--gray); font-size:0.65rem;">51.69s · Ashanti Regional 2026</span></div>
+
+    <!-- VIDEO CARD — replace src with your own video file -->
+    <div class="gallery-card gal-video">
+      <div class="gallery-inner" style="background:#0a0a0a; padding:0; overflow:hidden;">
+        <video
+          class="gallery-video-el"
+          playsinline
+          controls
+          preload="metadata"
+          poster="images/trophy.jpg"
+          style="width:100%; height:100%; object-fit:cover; display:block;">
+          <!--
+            TO ADD YOUR OWN VIDEO:
+            1. Put your video file in a folder called "videos/" next to index.html
+            2. Replace the src below: <source src="videos/your-video-name.mp4" type="video/mp4">
+          -->
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+        </video>
       </div>
-      <div class="gallery-caption">📹 Record Race Video · Citi Sports</div>
+      <div class="gallery-caption">📹 Race Highlight · Replace with your own video</div>
     </div>
+
   </div>
 </section>
+
+<!-- ─── LIGHTBOX ─── -->
+<div id="lightbox" onclick="closeLightbox()">
+  <div class="lb-overlay"></div>
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-prev" onclick="event.stopPropagation(); shiftLightbox(-1)">‹</button>
+  <button class="lb-next" onclick="event.stopPropagation(); shiftLightbox(1)">›</button>
+  <div class="lb-content" onclick="event.stopPropagation()">
+    <img id="lb-img" src="" alt="" />
+    <div id="lb-caption"></div>
+  </div>
+</div>
 
 <!-- ─── TRAINING ─── -->
 <section id="training">
@@ -2032,6 +2155,16 @@
   </div>
 </footer>
 
+<!-- Back to top button — must be before the script -->
+<button id="backToTop" style="
+  position:fixed; bottom:2rem; right:2rem; z-index:200;
+  width:46px; height:46px;
+  background:var(--gold); border:none; cursor:pointer;
+  font-size:1.2rem; opacity:0; transition:opacity 0.3s;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  display:flex; align-items:center; justify-content:center;
+" title="Back to top">↑</button>
+
 <script>
   // ── Scroll fade-in ──
   const observer = new IntersectionObserver((entries) => {
@@ -2050,7 +2183,9 @@
         if (target === '#1') return;
         const num = parseFloat(target);
         if (isNaN(num)) return;
-        let start = num - 3; const step = (num - start) / 40; let current = start;
+        let start = num - 3;
+        const step = (num - start) / 40;
+        let current = start;
         const timer = setInterval(() => {
           current += step;
           if (current >= num) { counter.textContent = target; clearInterval(timer); }
@@ -2082,10 +2217,10 @@
     const now = new Date();
     const diff = target - now;
     if (diff <= 0) {
-      document.getElementById('cd-days').textContent = '00';
-      document.getElementById('cd-hours').textContent = '00';
-      document.getElementById('cd-mins').textContent = '00';
-      document.getElementById('cd-secs').textContent = '00';
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = '00';
+      });
       return;
     }
     const days  = Math.floor(diff / 86400000);
@@ -2109,10 +2244,10 @@
   });
 
   // ── Contact form submit ──
-  const formBtn = document.querySelector('.btn-primary[style]');
+  const formBtn = document.querySelector('#contact .btn-primary');
   if (formBtn) {
     formBtn.addEventListener('click', () => {
-      formBtn.textContent = '✓ Message Sent!';
+      formBtn.textContent = '\u2713 Message Sent!';
       formBtn.style.background = '#006B3F';
       setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 3000);
     });
@@ -2132,35 +2267,69 @@
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
     });
   });
 
   // ── Nav shrink on scroll ──
+  const navEl = document.querySelector('nav');
+  const btt   = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 80) nav.style.padding = '0.7rem 3rem';
-    else nav.style.padding = '1.2rem 3rem';
-  });
-
-  // ── Back to top button ──
-  const btt = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 600) btt.style.opacity = '1';
-    else btt.style.opacity = '0';
+    navEl.style.padding = window.scrollY > 80 ? '0.7rem 3rem' : '1.2rem 3rem';
+    btt.style.opacity   = window.scrollY > 600 ? '1' : '0';
   });
   btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-</script>
 
-<!-- Back to top -->
-<button id="backToTop" style="
-  position:fixed; bottom:2rem; right:2rem; z-index:200;
-  width:46px; height:46px;
-  background:var(--gold); border:none; cursor:pointer;
-  font-size:1.2rem; opacity:0; transition:opacity 0.3s;
-  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
-  display:flex; align-items:center; justify-content:center;
-" title="Back to top">↑</button>
+  // ── Lightbox ──
+  const imgCards = Array.from(document.querySelectorAll('.gal-img'));
+  let lbIndex = 0;
+
+  window.openLightbox = function(card) {
+    lbIndex = imgCards.indexOf(card);
+    showLightboxAt(lbIndex);
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeLightbox = function() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  window.shiftLightbox = function(dir) {
+    lbIndex = (lbIndex + dir + imgCards.length) % imgCards.length;
+    const img = document.getElementById('lb-img');
+    img.style.opacity = '0';
+    setTimeout(() => { showLightboxAt(lbIndex); img.style.opacity = '1'; }, 150);
+  };
+
+  function showLightboxAt(i) {
+    const card = imgCards[i];
+    document.getElementById('lb-img').src = card.dataset.src;
+    document.getElementById('lb-caption').textContent = card.dataset.caption;
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowRight')  shiftLightbox(1);
+    if (e.key === 'ArrowLeft')   shiftLightbox(-1);
+  });
+
+  // Swipe support (mobile)
+  let touchStartX = 0;
+  const lbEl = document.getElementById('lightbox');
+  lbEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  lbEl.addEventListener('touchend',   e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) shiftLightbox(diff > 0 ? 1 : -1);
+  });
+
+  // Image fade transition
+  document.getElementById('lb-img').style.transition = 'opacity 0.15s';
+</script>
 </body>
 </html>
