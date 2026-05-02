@@ -1021,9 +1021,45 @@
     gap: 0.75rem;
   }
   .gallery-more-grid .gallery-card { height: 240px; }
-  @media (max-width: 900px) {
-    .gallery-more-grid { grid-template-columns: 1fr; }
-    .gallery-more-grid .gallery-card { height: 220px; }
+
+  /* ─── NEWS MORE GRID ─── */
+  .news-more-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+  }
+  .news-more-card {
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.05);
+    overflow: hidden;
+  }
+  .news-more-card-img {
+    height: 160px;
+    background: var(--dark2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem;
+    position: relative;
+  }
+  .news-more-card-tag {
+    position: absolute; top: 0.75rem; left: 0.75rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 0.25rem 0.6rem;
+  }
+  .news-more-card-body { padding: 1.2rem; }
+  .news-more-card-date {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 0.4rem;
+  }
+  .news-more-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem; letter-spacing: 1px;
+    line-height: 1.15; margin-bottom: 0.5rem;
+  }
+  .news-more-card-text {
+    font-size: 0.82rem; color: rgba(245,245,240,0.5); line-height: 1.6;
   }
 
   /* ─── YOUTUBE CARD ─── */
@@ -1229,6 +1265,18 @@
     }
     /* Always show zoom icon on touch devices */
     .gallery-zoom { opacity: 1; }
+    /* Gallery more — same as main grid on mobile */
+    .gallery-more-grid {
+      grid-template-columns: 1fr !important;
+      gap: 0.75rem !important;
+    }
+    .gallery-more-grid .gallery-card { height: 240px !important; }
+    /* News more — same card style on mobile */
+    .news-more-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+    .news-more-card-img { height: 140px !important; }
 
     /* ── TRAINING ── */
     .training-week { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
@@ -2222,26 +2270,44 @@
     </div>
 
     <!-- ★ HIDDEN EXTRA NEWS — shown after "Read More" ★
-         To add more news articles: copy a news card block and paste it inside #newsMore -->
-    <div id="newsMore" style="display:none; margin-top:1.5rem;" class="fade-in">
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem;">
+         To add more cards: copy a .news-more-card block and paste it inside .news-more-grid -->
+    <div id="newsMore" style="display:none; margin-top:1.5rem;">
+      <div class="news-more-grid">
 
-        <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:1.5rem; border-left:3px solid var(--gold);">
-          <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem;">Apr 2026 · Upcoming</div>
-          <h4 style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:1px; margin-bottom:0.5rem;">National Championship Entry Confirmed</h4>
-          <p style="font-size:0.82rem; color:rgba(245,245,240,0.5); line-height:1.6;">Bossman has officially been entered into the Ghana Schools & Colleges Athletics National Championships, representing Prempeh College in the U20 Boys 400m Hurdles.</p>
+        <div class="news-more-card">
+          <div class="news-more-card-img" style="background:linear-gradient(135deg,#0f1a05,#0a1002);">
+            🏟️
+            <span class="news-more-card-tag" style="background:var(--gold); color:var(--dark);">Upcoming</span>
+          </div>
+          <div class="news-more-card-body">
+            <div class="news-more-card-date" style="color:var(--gold);">Apr 2026 · Nationals</div>
+            <div class="news-more-card-title">National Championship Entry Confirmed</div>
+            <div class="news-more-card-text">Bossman has officially been entered into the Ghana Schools & Colleges Athletics National Championships, representing Prempeh College in the U20 Boys 400m Hurdles.</div>
+          </div>
         </div>
 
-        <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:1.5rem; border-left:3px solid var(--red);">
-          <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--red); margin-bottom:0.5rem;">Mar 2026 · Training Update</div>
-          <h4 style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:1px; margin-bottom:0.5rem;">New Training Block Begins</h4>
-          <p style="font-size:0.82rem; color:rgba(245,245,240,0.5); line-height:1.6;">Bossman has entered a new high-intensity training block focused on stride consistency and improving his back-straight mechanics ahead of the national season.</p>
+        <div class="news-more-card">
+          <div class="news-more-card-img" style="background:linear-gradient(135deg,#1a0505,#100202);">
+            💪
+            <span class="news-more-card-tag" style="background:var(--red); color:#fff;">Training</span>
+          </div>
+          <div class="news-more-card-body">
+            <div class="news-more-card-date" style="color:var(--red);">Mar 2026 · Update</div>
+            <div class="news-more-card-title">New Training Block Begins</div>
+            <div class="news-more-card-text">Bossman has entered a new high-intensity training block focused on stride consistency and improving his back-straight mechanics ahead of the national season.</div>
+          </div>
         </div>
 
-        <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:1.5rem; border-left:3px solid var(--gray);">
-          <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin-bottom:0.5rem;">Add Your News Here</div>
-          <h4 style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:1px; margin-bottom:0.5rem;">Your Next Story Goes Here</h4>
-          <p style="font-size:0.82rem; color:rgba(245,245,240,0.5); line-height:1.6;">Copy this card block and fill in your own date, title, and story text to add more news updates whenever something happens.</p>
+        <div class="news-more-card">
+          <div class="news-more-card-img" style="background:linear-gradient(135deg,#0d0d0d,#111);">
+            ✏️
+            <span class="news-more-card-tag" style="background:var(--gray); color:#fff;">Add Story</span>
+          </div>
+          <div class="news-more-card-body">
+            <div class="news-more-card-date" style="color:var(--gray);">Your Date Here</div>
+            <div class="news-more-card-title">Your Next Story Goes Here</div>
+            <div class="news-more-card-text">Copy this card block and fill in your own date, headline and story text to add more news updates whenever something new happens.</div>
+          </div>
         </div>
 
       </div>
@@ -2362,11 +2428,39 @@
   <div class="footer-logo">Bossman Kusi Appiah</div>
   <div class="footer-copy">© 2026 · 400M Hurdles · Ghana 🇬🇭 · Prempeh College</div>
   <div class="footer-socials">
-    <a href="#" class="footer-social" title="Twitter / X">𝕏</a>
-    <a href="#" class="footer-social" title="Instagram">IG</a>
-    <a href="#" class="footer-social" title="Facebook">FB</a>
-    <a href="#" class="footer-social" title="YouTube">YT</a>
-    <a href="#" class="footer-social" title="TikTok" style="font-size:0.75rem; letter-spacing:0px;">TikTok</a>
+    <!-- X (Twitter) — keep as text per request -->
+    <a href="#" class="footer-social" title="X / Twitter">𝕏</a>
+
+    <!-- Instagram -->
+    <a href="#" class="footer-social" title="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4.5"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+
+    <!-- Facebook -->
+    <a href="#" class="footer-social" title="Facebook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </svg>
+    </a>
+
+    <!-- YouTube -->
+    <a href="#" class="footer-social" title="YouTube">
+      <svg width="20" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+        <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/>
+      </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a href="#" class="footer-social" title="TikTok">
+      <svg width="17" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.19 8.19 0 0 0 4.79 1.52V6.82a4.85 4.85 0 0 1-1.02-.13z"/>
+      </svg>
+    </a>
   </div>
 </footer>
 
