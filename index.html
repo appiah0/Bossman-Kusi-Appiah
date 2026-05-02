@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bossman Kusi Appiah | 400m Hurdles</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --gold: #FFD100;
+    --red: #E8001D;
+    --dark: #0A0A0A;
+    --dark2: #111111;
+    --dark3: #1A1A1A;
+    --white: #F5F5F0;
+    --gray: #888;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--dark); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,209,0,0.15);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+  }
+  .nav-logo span { color: var(--white); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-menu-btn {
+    display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px;
+  }
+  .nav-menu-btn span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+  .mobile-menu {
+    display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0;
+    background: rgba(10,10,10,0.98); z-index: 99; flex-direction: column;
+    align-items: center; justify-content: center; gap: 2.5rem; backdrop-filter: blur(20px);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; letter-spacing: 4px; color: var(--white); text-decoration: none; transition: color 0.2s; }
+  .mobile-menu a:hover { color: var(--gold); }
+  @media (max-width: 900px) { .nav-links { display: none; } .nav-menu-btn { display: flex; } }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(232,0,29,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 30% 80%, rgba(255,209,0,0.07) 0%, transparent 60%),
+      linear-gradient(135deg, #050505 0%, #0f0f0f 50%, #080808 100%);
+  }
+  /* Animated track lines */
+  .track-lines {
+    position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+  }
+  .track-lines::before {
+    content:'';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 200%; height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 48px,
+      rgba(255,209,0,0.04) 48px,
+      rgba(255,209,0,0.04) 50px
+    );
+  }
+
+  .hero-left {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 9rem 3rem 4rem 4rem;
+  }
+  .hero-flag {
+    display: flex; align-items: center; gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .flag-bar {
+    width: 28px; height: 3px;
+  }
+  .flag-bar.r { background: var(--red); }
+  .flag-bar.g { background: #006B3F; }
+  .flag-bar.y { background: var(--gold); }
+  .hero-flag span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+  .hero-subtitle {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 7vw, 7.5rem);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+  .hero-name .accent { color: var(--gold); }
+  .hero-name .line2 { display: block; color: var(--red); }
+  .hero-tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(245,245,240,0.6);
+    max-width: 380px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 0.85rem 2.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none; cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,209,0,0.3); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 0.85rem 2.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid rgba(245,245,240,0.25);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-right {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    padding: 8rem 2rem 2rem;
+  }
+  /* Big bold RECORD display */
+  .record-showcase {
+    text-align: center;
+    position: relative;
+  }
+  .record-showcase::before {
+    content: '400M';
+    position: absolute;
+    top: -60px; left: 50%; transform: translateX(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11rem;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: 5px;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .record-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+  }
+  .record-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--red);
+    padding: 0.35rem 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    animation: pulse 2s infinite;
+  }
+  .record-badge::before { content:'●'; font-size: 0.5rem; }
+  .record-time {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 10vw, 10rem);
+    line-height: 1;
+    color: var(--gold);
+    letter-spacing: -2px;
+    text-shadow: 0 0 80px rgba(255,209,0,0.3);
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .record-unit {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    color: rgba(255,209,0,0.6);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+  .record-event {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+  /* Decorative lines around record */
+  .record-deco {
+    display: flex; align-items: center; gap: 1rem; justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .deco-line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, rgba(255,209,0,0.4)); }
+  .deco-line.right { transform: scaleX(-1); }
+  .deco-star { color: var(--gold); font-size: 0.8rem; }
+
+  /* Scrolling ticker */
+  .ticker-wrap {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: var(--gold);
+    overflow: hidden; height: 40px;
+    display: flex; align-items: center;
+  }
+  .ticker-track {
+    display: flex; gap: 0;
+    animation: ticker 25s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-item {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dark);
+    padding: 0 2rem;
+  }
+  .ticker-item::after { content: '★'; margin-left: 2rem; }
+
+  /* ─── SECTION SHARED ─── */
+  section { padding: 6rem 4rem; }
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .section-label::before { content:''; display:block; width:30px; height:2px; background:var(--gold); }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  .title-accent { color: var(--gold); }
+
+  /* ─── ABOUT ─── */
+  #about {
+    background: var(--dark2);
+    position: relative; overflow: hidden;
+  }
+  #about::before {
+    content: 'HURDLES';
+    position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14rem;
+    color: rgba(255,255,255,0.02);
+    pointer-events: none;
+    letter-spacing: 5px;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-card {
+    background: var(--dark3);
+    border: 1px solid rgba(255,209,0,0.1);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::after {
+    content:'';
+    position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(to bottom, var(--gold), var(--red));
+  }
+  .about-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6rem;
+    color: rgba(255,209,0,0.08);
+    line-height: 1;
+    position: absolute; bottom: -1rem; right: 1rem;
+  }
+  .about-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .about-card-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  .about-cards-stack { display: flex; flex-direction: column; gap: 1rem; }
+  .about-text { font-size: 1.05rem; line-height: 1.8; color: rgba(245,245,240,0.65); }
+  .about-text p { margin-bottom: 1.2rem; }
+  .about-highlight {
+    color: var(--white);
+    font-weight: 500;
+  }
+  .about-school {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(255,209,0,0.1);
+    border: 1px solid rgba(255,209,0,0.2);
+    padding: 0.5rem 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 1rem;
+  }
+
+  /* ─── STATS ─── */
+  #stats {
+    background: var(--gold);
+    padding: 4rem;
+    position: relative; overflow: hidden;
+  }
+  #stats::before {
+    content: 'STATS';
+    position: absolute; left: -1rem; top: 50%; transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14rem;
+    color: rgba(10,10,10,0.07);
+    pointer-events: none;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px; margin: 0 auto;
+    position: relative; z-index: 1;
+  }
+  .stat-item { text-align: center; }
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    line-height: 1;
+    color: var(--dark);
+    letter-spacing: -1px;
+  }
+  .stat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(10,10,10,0.6);
+    margin-top: 0.3rem;
+  }
+  .stat-divider {
+    width: 1px;
+    background: rgba(10,10,10,0.15);
+    align-self: stretch;
+  }
+
+  /* ─── ACHIEVEMENTS ─── */
+  #achievements {
+    background: var(--dark);
+    position: relative;
+  }
+  .achievements-header {
+    max-width: 1200px; margin: 0 auto 3rem;
+  }
+  .achievements-list {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 1px;
+  }
+  .achievement-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.8rem 2rem;
+    background: var(--dark3);
+    border-left: 3px solid transparent;
+    transition: border-color 0.3s, background 0.3s;
+    cursor: default;
+  }
+  .achievement-item:hover {
+    border-left-color: var(--gold);
+    background: rgba(255,209,0,0.04);
+  }
+  .achievement-item.gold-item { border-left-color: var(--gold); }
+  .achievement-item.silver-item { border-left-color: #C0C0C0; }
+  .achievement-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--gray);
+  }
+  .achievement-info {}
+  .achievement-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+  }
+  .achievement-event {
+    font-size: 0.85rem;
+    color: var(--gray);
+    letter-spacing: 1px;
+  }
+  .achievement-medal {
+    font-size: 2rem;
+  }
+  .achievement-time {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    text-align: right;
+  }
+  .achievement-time small {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--gray);
+    font-style: normal;
+  }
+
+  /* ─── HURDLES TECHNIQUE ─── */
+  #technique {
+    background: var(--dark2);
+    position: relative; overflow: hidden;
+  }
+  .technique-header {
+    max-width: 1200px; margin: 0 auto 3rem;
+  }
+  .technique-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .technique-card {
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .technique-card:hover {
+    border-color: rgba(255,209,0,0.3);
+    transform: translateY(-4px);
+  }
+  .technique-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .technique-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .technique-card-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(245,245,240,0.55);
+  }
+  .technique-number {
+    position: absolute;
+    bottom: -1rem; right: 0.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.03);
+    pointer-events: none;
+  }
+
+  /* ─── RACE TRACKER ─── */
+  #tracker {
+    background: var(--dark);
+    position: relative;
+  }
+  .tracker-header {
+    max-width: 1200px; margin: 0 auto 3rem;
+  }
+  .tracker-wrap {
+    max-width: 1200px; margin: 0 auto;
+  }
+  .track-visual {
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 2.5rem;
+    position: relative; overflow: hidden;
+  }
+  .hurdle-track {
+    position: relative;
+    height: 120px;
+    background: repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.02) 0px,
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 10%
+    );
+    border-top: 2px solid rgba(255,255,255,0.1);
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    margin-bottom: 1rem;
+  }
+  .hurdle-line {
+    position: absolute; top: 10%; height: 80%;
+    width: 4px;
+    background: linear-gradient(to bottom, rgba(255,209,0,0.8), rgba(232,0,29,0.8));
+    border-radius: 2px;
+  }
+  /* 10 hurdles evenly spaced */
+  .athlete-dot {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 20px; height: 20px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255,209,0,0.6);
+    left: 0%;
+    animation: runTrack 6s ease-in-out infinite;
+  }
+  @keyframes runTrack {
+    0%   { left: 0%; }
+    100% { left: calc(100% - 20px); }
+  }
+  .segment-labels {
+    display: flex; justify-content: space-between;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+  .split-table {
+    margin-top: 2rem;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .split-table th {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-align: left;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .split-table td {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: rgba(245,245,240,0.8);
+  }
+  .split-table td.highlight { color: var(--gold); font-weight: 700; }
+  .split-table tr:hover td { background: rgba(255,209,0,0.03); }
+
+  /* ─── GALLERY ─── */
+  #gallery {
+    background: var(--dark2);
+    padding: 6rem 4rem;
+  }
+  .gallery-header {
+    max-width: 1200px; margin: 0 auto 3rem;
+  }
+  .gallery-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 220px 220px;
+    gap: 0.75rem;
+  }
+  .gallery-card {
+    position: relative; overflow: hidden;
+    background: var(--dark3);
+  }
+  .gallery-card:first-child { grid-row: 1 / 3; }
+  .gallery-inner {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+    background: linear-gradient(135deg, #1a1a1a, #111);
+    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s;
+  }
+  .gallery-card:hover .gallery-inner { transform: scale(1.04); }
+  .gallery-inner::before {
+    content:'';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  }
+  .gallery-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1rem 1.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245,245,240,0.7);
+  }
+  /* Colored overlays for visual interest */
+  .gc-red .gallery-inner { background: linear-gradient(135deg, #1a0505, #110a0a); }
+  .gc-gold .gallery-inner { background: linear-gradient(135deg, #1a1500, #110e00); }
+  .gc-blue .gallery-inner { background: linear-gradient(135deg, #050a1a, #050810); }
+  .gc-green .gallery-inner { background: linear-gradient(135deg, #051a0a, #051109); }
+
+  /* ─── TRAINING SCHEDULE ─── */
+  #training {
+    background: var(--dark);
+  }
+  .training-header {
+    max-width: 1200px; margin: 0 auto 3rem;
+  }
+  .training-week {
+    max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.75rem;
+  }
+  .training-day {
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .training-day:hover { transform: translateY(-4px); border-color: rgba(255,209,0,0.3); }
+  .training-day.active { border-color: var(--gold); background: rgba(255,209,0,0.05); }
+  .day-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 1rem;
+  }
+  .day-icon { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
+  .day-focus {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .day-detail {
+    font-size: 0.7rem;
+    color: rgba(245,245,240,0.4);
+    line-height: 1.4;
+  }
+  .day-rest .day-focus { color: var(--gray); }
+
+  /* ─── QUOTE ─── */
+  #quote {
+    background: var(--red);
+    padding: 5rem 4rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  #quote::before {
+    content: '"';
+    position: absolute; top: -2rem; left: 2rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20rem;
+    color: rgba(0,0,0,0.15);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .quote-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.1;
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+    position: relative; z-index: 1;
+    letter-spacing: 1px;
+  }
+  .quote-attr {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245,245,240,0.7);
+    position: relative; z-index: 1;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--dark2);
+    position: relative;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    max-width: 1200px; margin: 0 auto;
+    align-items: start;
+  }
+  .contact-info .section-title { margin-bottom: 1.5rem; }
+  .contact-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(245,245,240,0.55);
+    margin-bottom: 2.5rem;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.05);
+    text-decoration: none;
+    color: var(--white);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .contact-link:hover { border-color: var(--gold); background: rgba(255,209,0,0.04); }
+  .contact-link-icon { font-size: 1.3rem; }
+  .contact-link-info {}
+  .contact-link-type {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .contact-link-value { font-size: 0.9rem; color: rgba(245,245,240,0.7); }
+
+  .contact-form {}
+  .form-group { margin-bottom: 1.2rem; }
+  .form-label {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+  }
+  .form-input, .form-textarea {
+    width: 100%;
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--white);
+    padding: 0.9rem 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--gold); }
+  .form-textarea { resize: vertical; min-height: 120px; }
+  .form-select {
+    width: 100%;
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--white);
+    padding: 0.9rem 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+  }
+  .form-select option { background: var(--dark3); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+  }
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--gray);
+    letter-spacing: 1px;
+  }
+  .footer-socials { display: flex; gap: 1.2rem; }
+  .footer-social {
+    width: 38px; height: 38px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--gray);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .footer-social:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.6; }
+  }
+
+  /* Scroll-triggered fade */
+  .fade-in {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 7rem 1.5rem 2rem; }
+    .hero-right { padding: 2rem 1.5rem 5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-divider { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .technique-grid { grid-template-columns: 1fr; }
+    .training-week { grid-template-columns: repeat(4, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-card:first-child { grid-row: auto; }
+    footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; }
+    .record-showcase::before { font-size: 6rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-logo">BK<span>A</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#technique">Technique</a></li>
+    <li><a href="#training">Training</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-menu-btn" id="menuBtn">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#achievements" class="mobile-link">Achievements</a>
+  <a href="#technique" class="mobile-link">Technique</a>
+  <a href="#training" class="mobile-link">Training</a>
+  <a href="#news" class="mobile-link">News</a>
+  <a href="#gallery" class="mobile-link">Gallery</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="track-lines"></div>
+
+  <div class="hero-left">
+    <div class="hero-flag">
+      <div class="flag-bar r"></div>
+      <div class="flag-bar g"></div>
+      <div class="flag-bar y"></div>
+      <span>Ghana · West Africa</span>
+    </div>
+    <p class="hero-subtitle">400m Hurdles Specialist</p>
+    <h1 class="hero-name">
+      Bossman<br>
+      <span class="line2">Kusi</span><br>
+      <span class="accent">Appiah</span>
+    </h1>
+    <p class="hero-tagline">
+      Clearing every barrier. Chasing every second. The rising force of Ghanaian athletics — born to dominate the track.
+    </p>
+    <div class="hero-btns">
+      <a href="#achievements" class="btn-primary">View Achievements</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="record-showcase">
+      <p class="record-label">Personal Best</p>
+      <div class="record-badge">Regional Record Holder</div>
+      <div class="record-time">51.69</div>
+      <div class="record-unit">Seconds</div>
+      <div class="record-event">400M Hurdles · 2025/26</div>
+      <div class="record-deco">
+        <div class="deco-line"></div>
+        <span class="deco-star">★</span>
+        <span class="deco-star">★</span>
+        <span class="deco-star">★</span>
+        <div class="deco-line right"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="ticker-item">Gold Medalist · Ashanti Regional Championships</span>
+      <span class="ticker-item">Record: 51.69s · 400M Hurdles</span>
+      <span class="ticker-item">Prempeh College · Ghana</span>
+      <span class="ticker-item">Rising Star of Ghanaian Athletics</span>
+      <span class="ticker-item">Gold Medalist · Ashanti Regional Championships</span>
+      <span class="ticker-item">Record: 51.69s · 400M Hurdles</span>
+      <span class="ticker-item">Prempeh College · Ghana</span>
+      <span class="ticker-item">Rising Star of Ghanaian Athletics</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual fade-in">
+      <div class="about-cards-stack">
+        <div class="about-card">
+          <div class="about-card-title">School</div>
+          <div class="about-card-text">Prempeh<br>College</div>
+          <div class="about-number">PC</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-title">Region</div>
+          <div class="about-card-text">Ashanti<br>Ghana 🇬🇭</div>
+          <div class="about-number">GH</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-title">Specialty</div>
+          <div class="about-card-text">400M<br>Hurdles</div>
+          <div class="about-number">H</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content fade-in">
+      <p class="section-label">The Athlete</p>
+      <h2 class="section-title">Built to <span class="title-accent">Clear</span><br>Every Hurdle</h2>
+      <div class="about-text">
+        <p>
+          <span class="about-highlight">Bossman Kusi Appiah</span> is a powerhouse in the making — a Ghanaian track and field sensation who has turned the 400m hurdles into his personal stage. Representing Prempeh College in the Ashanti Region, Bossman has shown the speed, stamina, and technique that are the hallmarks of a future champion.
+        </p>
+        <p>
+          In the 2025/26 Ashanti Region Schools & Colleges Athletics Super Zonal championships, Bossman did not just win — he <span class="about-highlight">shattered the regional record</span>, clocking an astonishing 51.69 seconds to claim gold. His personal best of 52.34s further underlines his raw potential and rapid development.
+        </p>
+        <p>
+          With elite footwork over 10 hurdles, controlled aggression in the back stretch, and a finishing kick that few can match, Bossman is a name that Ghanaian athletics — and the continent — will be hearing for years to come.
+        </p>
+      </div>
+      <div class="about-school">🏫 Prempeh College · Kumasi, Ghana</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-item fade-in">
+      <div class="stat-number">51.69</div>
+      <div class="stat-label">Regional Record (s)</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item fade-in">
+      <div class="stat-number">52.34</div>
+      <div class="stat-label">Personal Best (s)</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item fade-in">
+      <div class="stat-number">10</div>
+      <div class="stat-label">Hurdles Cleared</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item fade-in">
+      <div class="stat-number">#1</div>
+      <div class="stat-label">Ashanti Region Rank</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ACHIEVEMENTS ─── -->
+<section id="achievements">
+  <div class="achievements-header fade-in">
+    <p class="section-label">Track Record</p>
+    <h2 class="section-title">Career <span class="title-accent">Highlights</span></h2>
+  </div>
+  <div class="achievements-list">
+    <div class="achievement-item gold-item fade-in">
+      <div class="achievement-year">2026</div>
+      <div class="achievement-info">
+        <div class="achievement-title">🥇 Gold Medal — Regional Record</div>
+        <div class="achievement-event">Ashanti Region Schools & Colleges Athletics · Super Zonal · 400m Hurdles</div>
+      </div>
+      <div class="achievement-time">51.69s <small>New Record</small></div>
+    </div>
+    <div class="achievement-item gold-item fade-in">
+      <div class="achievement-year">2025</div>
+      <div class="achievement-info">
+        <div class="achievement-title">🥇 Personal Best Established</div>
+        <div class="achievement-event">400m Hurdles · Competitive Season</div>
+      </div>
+      <div class="achievement-time">52.34s <small>Personal Best</small></div>
+    </div>
+    <div class="achievement-item fade-in">
+      <div class="achievement-year">2025</div>
+      <div class="achievement-info">
+        <div class="achievement-title">⭐ Prempeh College Representation</div>
+        <div class="achievement-event">Ashanti Regional Athletics Championships · Boys 400m Hurdles</div>
+      </div>
+      <div class="achievement-time">— <small>Finalist</small></div>
+    </div>
+    <div class="achievement-item fade-in">
+      <div class="achievement-year">—</div>
+      <div class="achievement-info">
+        <div class="achievement-title">🎯 National Level — Next Target</div>
+        <div class="achievement-event">Ghana Schools & Colleges Athletics Championships</div>
+      </div>
+      <div class="achievement-time">— <small>Upcoming</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TECHNIQUE ─── -->
+<section id="technique">
+  <div class="technique-header fade-in">
+    <p class="section-label">The Science</p>
+    <h2 class="section-title">Elite <span class="title-accent">Technique</span></h2>
+    <p style="color:rgba(245,245,240,0.5); max-width:600px; margin-top:0.5rem; line-height:1.7; font-size:0.95rem;">
+      The 400m hurdles demands a unique blend of explosive speed, endurance, and flawless hurdling mechanics over 10 barriers in 400 metres.
+    </p>
+  </div>
+  <div class="technique-grid">
+    <div class="technique-card fade-in">
+      <span class="technique-icon">⚡</span>
+      <div class="technique-card-title">Explosive Start</div>
+      <div class="technique-card-text">
+        A powerful drive phase out of the blocks sets the tone for the entire race. The first 45m to Hurdle 1 is where rhythm is established. Bossman's fast-twitch explosiveness gives him an early edge.
+      </div>
+      <div class="technique-number">01</div>
+    </div>
+    <div class="technique-card fade-in">
+      <span class="technique-icon">🏃</span>
+      <div class="technique-card-title">Stride Pattern</div>
+      <div class="technique-card-text">
+        Elite 400m hurdlers maintain a locked stride pattern between hurdles — typically 13–15 strides. Consistency in stride frequency and length is what separates champions from competitors.
+      </div>
+      <div class="technique-number">02</div>
+    </div>
+    <div class="technique-card fade-in">
+      <span class="technique-icon">🦵</span>
+      <div class="technique-card-title">Hurdle Clearance</div>
+      <div class="technique-card-text">
+        Clearing each 91.4cm barrier with minimal air time is critical. A flat, attack-style lead leg combined with a fast trail leg keeps forward momentum and prevents time loss over each hurdle.
+      </div>
+      <div class="technique-number">03</div>
+    </div>
+    <div class="technique-card fade-in">
+      <span class="technique-icon">💨</span>
+      <div class="technique-card-title">Back Stretch Drive</div>
+      <div class="technique-card-text">
+        The 200–300m segment is where races are won or lost. Maintaining form under fatigue, managing lactic acid buildup, and staying mechanically sound through hurdles 5–8 is essential.
+      </div>
+      <div class="technique-number">04</div>
+    </div>
+    <div class="technique-card fade-in">
+      <span class="technique-icon">🔥</span>
+      <div class="technique-card-title">Final Sprint</div>
+      <div class="technique-card-text">
+        The last 40m after the 10th hurdle is a pure sprint to the line. Athletes who preserve their form through the final hurdle and maintain arm drive in the home straight claim the top spot.
+      </div>
+      <div class="technique-number">05</div>
+    </div>
+    <div class="technique-card fade-in">
+      <span class="technique-icon">🧠</span>
+      <div class="technique-card-title">Race Intelligence</div>
+      <div class="technique-card-text">
+        Knowing when to push, when to conserve, and how to adapt when a hurdle disrupts rhythm is a mental skill. Bossman's composure under pressure is a defining trait of his athletic identity.
+      </div>
+      <div class="technique-number">06</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RACE TRACKER ─── -->
+<section id="tracker">
+  <div class="tracker-header fade-in">
+    <p class="section-label">Race Breakdown</p>
+    <h2 class="section-title">The <span class="title-accent">Race</span> Visualized</h2>
+  </div>
+  <div class="tracker-wrap fade-in">
+    <div class="track-visual">
+      <!-- Animated track -->
+      <div class="hurdle-track">
+        <div class="hurdle-line" style="left:9%"></div>
+        <div class="hurdle-line" style="left:18%"></div>
+        <div class="hurdle-line" style="left:27%"></div>
+        <div class="hurdle-line" style="left:36%"></div>
+        <div class="hurdle-line" style="left:45%"></div>
+        <div class="hurdle-line" style="left:54%"></div>
+        <div class="hurdle-line" style="left:63%"></div>
+        <div class="hurdle-line" style="left:72%"></div>
+        <div class="hurdle-line" style="left:81%"></div>
+        <div class="hurdle-line" style="left:90%"></div>
+        <div class="athlete-dot"></div>
+      </div>
+      <div class="segment-labels">
+        <span>Start</span>
+        <span>H1</span>
+        <span>H2</span>
+        <span>H3</span>
+        <span>H4</span>
+        <span>H5</span>
+        <span>H6</span>
+        <span>H7</span>
+        <span>H8</span>
+        <span>H9</span>
+        <span>H10</span>
+        <span>Finish</span>
+      </div>
+
+      <!-- Estimated splits table -->
+      <table class="split-table">
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th>Distance</th>
+            <th>Phase</th>
+            <th>Est. Split</th>
+            <th>Key Demand</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Start → H1</td>
+            <td>45m</td>
+            <td>Launch</td>
+            <td class="highlight">~5.5s</td>
+            <td>Explosive acceleration</td>
+          </tr>
+          <tr>
+            <td>H1 → H5</td>
+            <td>~140m</td>
+            <td>Front Straight</td>
+            <td class="highlight">~14.0s</td>
+            <td>Stride lock, rhythm</td>
+          </tr>
+          <tr>
+            <td>H5 → H8</td>
+            <td>~105m</td>
+            <td>Back Stretch</td>
+            <td class="highlight">~14.5s</td>
+            <td>Form under fatigue</td>
+          </tr>
+          <tr>
+            <td>H8 → H10</td>
+            <td>~70m</td>
+            <td>Home Straight</td>
+            <td class="highlight">~10.0s</td>
+            <td>Survival + drive</td>
+          </tr>
+          <tr>
+            <td>H10 → Finish</td>
+            <td>~40m</td>
+            <td>Sprint Out</td>
+            <td class="highlight">~4.5s</td>
+            <td>Pure speed</td>
+          </tr>
+          <tr>
+            <td colspan="3" style="color:var(--gray); font-size:0.8rem; letter-spacing:2px; font-family:'Barlow Condensed', sans-serif; text-transform:uppercase;">TOTAL (Record)</td>
+            <td class="highlight" style="font-size:1.4rem;">51.69s</td>
+            <td style="color:var(--gold); font-family:'Barlow Condensed',sans-serif; letter-spacing:1px;">🏆 Regional Record</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALLERY ─── -->
+<section id="gallery">
+  <div class="gallery-header fade-in">
+    <p class="section-label">In Action</p>
+    <h2 class="section-title">On The <span class="title-accent">Track</span></h2>
+  </div>
+  <div class="gallery-grid fade-in">
+    <div class="gallery-card gc-red">
+      <div class="gallery-inner">🏃</div>
+      <div class="gallery-caption">Record-Breaking Race · 2026</div>
+    </div>
+    <div class="gallery-card gc-gold">
+      <div class="gallery-inner">🏅</div>
+      <div class="gallery-caption">Gold Medal Moment</div>
+    </div>
+    <div class="gallery-card gc-green">
+      <div class="gallery-inner">🏋️</div>
+      <div class="gallery-caption">Strength Training</div>
+    </div>
+    <div class="gallery-card gc-blue">
+      <div class="gallery-inner">🔥</div>
+      <div class="gallery-caption">Pre-Race Focus</div>
+    </div>
+    <div class="gallery-card">
+      <div class="gallery-inner">🎯</div>
+      <div class="gallery-caption">Hurdle Clearance Drill</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRAINING ─── -->
+<section id="training">
+  <div class="training-header fade-in">
+    <p class="section-label">The Grind</p>
+    <h2 class="section-title">Weekly <span class="title-accent">Training</span></h2>
+    <p style="color:rgba(245,245,240,0.5); max-width:580px; margin-top:0.5rem; line-height:1.7; font-size:0.95rem;">
+      Champions are built in training. Here's a glimpse into the weekly structure that drives Bossman's performance.
+    </p>
+  </div>
+  <div class="training-week fade-in">
+    <div class="training-day active">
+      <div class="day-name">Mon</div>
+      <span class="day-icon">⚡</span>
+      <div class="day-focus">Speed Work</div>
+      <div class="day-detail">Sprint drills, acceleration runs, 60–100m repeats</div>
+    </div>
+    <div class="training-day">
+      <div class="day-name">Tue</div>
+      <span class="day-icon">🏃</span>
+      <div class="day-focus">Hurdle Tech</div>
+      <div class="day-detail">Hurdle clearance mechanics, lead leg & trail leg drills</div>
+    </div>
+    <div class="training-day">
+      <div class="day-name">Wed</div>
+      <span class="day-icon">🏋️</span>
+      <div class="day-focus">Strength</div>
+      <div class="day-detail">Squats, power cleans, plyometrics, hip mobility</div>
+    </div>
+    <div class="training-day">
+      <div class="day-name">Thu</div>
+      <span class="day-icon">🔄</span>
+      <div class="day-focus">Race Sim</div>
+      <div class="day-detail">Full 300m–400m hurdle race pace runs, stride pattern</div>
+    </div>
+    <div class="training-day">
+      <div class="day-name">Fri</div>
+      <span class="day-icon">💨</span>
+      <div class="day-focus">Tempo Run</div>
+      <div class="day-detail">Aerobic base, 600m–800m tempo repeats, form work</div>
+    </div>
+    <div class="training-day">
+      <div class="day-name">Sat</div>
+      <span class="day-icon">🧘</span>
+      <div class="day-focus">Recovery</div>
+      <div class="day-detail">Mobility, stretching, foam rolling, light jog</div>
+    </div>
+    <div class="training-day day-rest">
+      <div class="day-name">Sun</div>
+      <span class="day-icon">😴</span>
+      <div class="day-focus">Rest Day</div>
+      <div class="day-detail">Full recovery. Body adapts. Champions sleep.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── QUOTE ─── -->
+<section id="quote">
+  <p class="quote-text">Every Hurdle Is Just Another Obstacle That Wasn't Ready For Me</p>
+  <p class="quote-attr">— Bossman Kusi Appiah · 400M Hurdles</p>
+</section>
+
+<!-- ─── PROGRESS / SKILLS ─── -->
+<section id="progress" style="background:var(--dark2); padding:6rem 4rem;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="fade-in" style="margin-bottom:3rem;">
+      <p class="section-label">Athlete Profile</p>
+      <h2 class="section-title">Athletic <span class="title-accent">Attributes</span></h2>
+      <p style="color:rgba(245,245,240,0.5); margin-top:0.5rem; max-width:560px; line-height:1.7; font-size:0.95rem;">
+        A breakdown of the core physical and technical attributes that define Bossman's elite performance profile.
+      </p>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem 5rem;" class="fade-in">
+      <div>
+        <div class="prog-item" style="margin-bottom:2rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+            <span style="font-family:'Barlow Condensed',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--white);">Speed</span>
+            <span style="font-family:'Bebas Neue',sans-serif; font-size:1.1rem; color:var(--gold);">93%</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); height:6px; border-radius:0;">
+            <div class="prog-bar" data-width="93" style="height:100%; width:0%; background:linear-gradient(to right,var(--gold),#ffea70); transition:width 1.2s ease;"></div>
+          </div>
+        </div>
+        <div class="prog-item" style="margin-bottom:2rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+            <span style="font-family:'Barlow Condensed',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--white);">Hurdle Technique</span>
+            <span style="font-family:'Bebas Neue',sans-serif; font-size:1.1rem; color:var(--gold);">91%</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); height:6px;">
+            <div class="prog-bar" data-width="91" style="height:100%; width:0%; background:linear-gradient(to right,var(--gold),#ffea70); transition:width 1.2s ease 0.1s;"></div>
+          </div>
+        </div>
+        <div class="prog-item" style="margin-bottom:2rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+            <span style="font-family:'Barlow Condensed',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--white);">Explosive Power</span>
+            <span style="font-family:'Bebas Neue',sans-serif; font-size:1.1rem; color:var(--gold);">88%</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); height:6px;">
+            <div class="prog-bar" data-width="88" style="height:100%; width:0%; background:linear-gradient(to right,var(--gold),#ffea70); transition:width 1.2s ease 0.2s;"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="prog-item" style="margin-bottom:2rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+            <span style="font-family:'Barlow Condensed',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--white);">Endurance</span>
+            <span style="font-family:'Bebas Neue',sans-serif; font-size:1.1rem; color:var(--gold);">85%</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); height:6px;">
+            <div class="prog-bar" data-width="85" style="height:100%; width:0%; background:linear-gradient(to right,var(--red),#ff6666); transition:width 1.2s ease 0.3s;"></div>
+          </div>
+        </div>
+        <div class="prog-item" style="margin-bottom:2rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+            <span style="font-family:'Barlow Condensed',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--white);">Mental Toughness</span>
+            <span style="font-family:'Bebas Neue',sans-serif; font-size:1.1rem; color:var(--gold);">95%</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); height:6px;">
+            <div class="prog-bar" data-width="95" style="height:100%; width:0%; background:linear-gradient(to right,var(--red),#ff6666); transition:width 1.2s ease 0.4s;"></div>
+          </div>
+        </div>
+        <div class="prog-item" style="margin-bottom:2rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+            <span style="font-family:'Barlow Condensed',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--white);">Race Intelligence</span>
+            <span style="font-family:'Bebas Neue',sans-serif; font-size:1.1rem; color:var(--gold);">89%</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); height:6px;">
+            <div class="prog-bar" data-width="89" style="height:100%; width:0%; background:linear-gradient(to right,var(--red),#ff6666); transition:width 1.2s ease 0.5s;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COUNTDOWN TO NEXT RACE ─── -->
+<section id="countdown" style="background:var(--dark); padding:6rem 4rem; position:relative; overflow:hidden;">
+  <div style="position:absolute;inset:0; background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(232,0,29,0.07) 0%, transparent 70%); pointer-events:none;"></div>
+  <div style="max-width:900px; margin:0 auto; text-align:center; position:relative; z-index:1;" class="fade-in">
+    <p class="section-label" style="justify-content:center;">Next Event</p>
+    <h2 class="section-title" style="margin-bottom:0.5rem;">The Next <span class="title-accent">Battle</span></h2>
+    <p style="color:rgba(245,245,240,0.45); margin-bottom:3rem; font-size:0.95rem; letter-spacing:1px;">Ghana Schools & Colleges Athletics Championships · National Level</p>
+    <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.5rem;">
+      <div style="background:var(--dark3); border:1px solid rgba(255,209,0,0.15); padding:2rem 2.5rem; min-width:110px;">
+        <div id="cd-days" style="font-family:'Bebas Neue',sans-serif; font-size:4rem; line-height:1; color:var(--gold);">00</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gray); margin-top:0.3rem;">Days</div>
+      </div>
+      <div style="background:var(--dark3); border:1px solid rgba(255,209,0,0.15); padding:2rem 2.5rem; min-width:110px;">
+        <div id="cd-hours" style="font-family:'Bebas Neue',sans-serif; font-size:4rem; line-height:1; color:var(--gold);">00</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gray); margin-top:0.3rem;">Hours</div>
+      </div>
+      <div style="background:var(--dark3); border:1px solid rgba(255,209,0,0.15); padding:2rem 2.5rem; min-width:110px;">
+        <div id="cd-mins" style="font-family:'Bebas Neue',sans-serif; font-size:4rem; line-height:1; color:var(--gold);">00</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gray); margin-top:0.3rem;">Mins</div>
+      </div>
+      <div style="background:var(--dark3); border:1px solid rgba(232,0,29,0.3); padding:2rem 2.5rem; min-width:110px;">
+        <div id="cd-secs" style="font-family:'Bebas Neue',sans-serif; font-size:4rem; line-height:1; color:var(--red);">00</div>
+        <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gray); margin-top:0.3rem;">Secs</div>
+      </div>
+    </div>
+    <div style="display:inline-flex; align-items:center; gap:0.75rem; background:rgba(255,209,0,0.08); border:1px solid rgba(255,209,0,0.2); padding:0.75rem 1.5rem;">
+      <span style="font-size:1.2rem;">📍</span>
+      <span style="font-family:'Barlow Condensed',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold);">Ghana National Stadium · Accra, Ghana</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COMPARISON TABLE ─── -->
+<section id="comparison" style="background:var(--dark2); padding:6rem 4rem;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="fade-in" style="margin-bottom:3rem;">
+      <p class="section-label">Context</p>
+      <h2 class="section-title">How He <span class="title-accent">Compares</span></h2>
+      <p style="color:rgba(245,245,240,0.5); margin-top:0.5rem; max-width:580px; line-height:1.7; font-size:0.95rem;">
+        Putting Bossman's record time in the context of world-class 400m hurdles benchmarks to show just how far he's come — and where he's headed.
+      </p>
+    </div>
+    <div class="fade-in" style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; min-width:600px;">
+        <thead>
+          <tr style="background:rgba(255,209,0,0.08); border-bottom:2px solid rgba(255,209,0,0.3);">
+            <th style="font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); text-align:left; padding:1rem 1.5rem;">Athlete / Benchmark</th>
+            <th style="font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); text-align:left; padding:1rem 1.5rem;">Level</th>
+            <th style="font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); text-align:left; padding:1rem 1.5rem;">Time (s)</th>
+            <th style="font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); text-align:left; padding:1rem 1.5rem;">Gap to BKA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05); background:rgba(255,209,0,0.05);">
+            <td style="padding:1.1rem 1.5rem; font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:700; color:var(--gold);">★ Bossman Kusi Appiah</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:rgba(245,245,240,0.8);">Regional Record · Ghana Schools</td>
+            <td style="padding:1.1rem 1.5rem; font-family:'Bebas Neue',sans-serif; font-size:1.5rem; color:var(--gold);">51.69</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:var(--gold);">—</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:1.1rem 1.5rem; font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:600; color:var(--white);">Ghana National U20 Standard</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:rgba(245,245,240,0.55);">National Junior Level</td>
+            <td style="padding:1.1rem 1.5rem; font-family:'Bebas Neue',sans-serif; font-size:1.5rem; color:var(--white);">51.00</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:#4ade80;">0.69s ahead</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:1.1rem 1.5rem; font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:600; color:var(--white);">African U20 Championship Qualifier</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:rgba(245,245,240,0.55);">Continental Junior</td>
+            <td style="padding:1.1rem 1.5rem; font-family:'Bebas Neue',sans-serif; font-size:1.5rem; color:var(--white);">50.50</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:rgba(245,245,240,0.55);">1.19s to go</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:1.1rem 1.5rem; font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:600; color:var(--white);">World U20 Championship Qualifier</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:rgba(245,245,240,0.55);">World Junior Level</td>
+            <td style="padding:1.1rem 1.5rem; font-family:'Bebas Neue',sans-serif; font-size:1.5rem; color:var(--white);">49.50</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:rgba(245,245,240,0.55);">2.19s to go</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:1.1rem 1.5rem; font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:600; color:var(--white);">Olympic A Standard</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:rgba(245,245,240,0.55);">Olympic Level</td>
+            <td style="padding:1.1rem 1.5rem; font-family:'Bebas Neue',sans-serif; font-size:1.5rem; color:var(--white);">48.90</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:rgba(245,245,240,0.55);">2.79s to go</td>
+          </tr>
+          <tr>
+            <td style="padding:1.1rem 1.5rem; font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:600; color:var(--gray);">World Record (Karsten Warholm)</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:rgba(245,245,240,0.35);">World Record</td>
+            <td style="padding:1.1rem 1.5rem; font-family:'Bebas Neue',sans-serif; font-size:1.5rem; color:var(--gray);">45.94</td>
+            <td style="padding:1.1rem 1.5rem; font-size:0.85rem; color:rgba(245,245,240,0.35);">5.75s to go</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:1.5rem; font-size:0.8rem; color:var(--gray); font-family:'Barlow Condensed',sans-serif; letter-spacing:1px;">* Times are approximate benchmark standards. BKA = Bossman Kusi Appiah.</p>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section id="testimonials" style="background:var(--dark); padding:6rem 4rem;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="fade-in" style="margin-bottom:3rem;">
+      <p class="section-label">Voices</p>
+      <h2 class="section-title">What They <span class="title-accent">Say</span></h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;" class="fade-in">
+
+      <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:2rem; position:relative; border-top:3px solid var(--gold);">
+        <div style="font-size:2.5rem; color:var(--gold); font-family:'Bebas Neue',sans-serif; line-height:1; margin-bottom:1rem; opacity:0.4;">"</div>
+        <p style="font-size:0.95rem; line-height:1.75; color:rgba(245,245,240,0.65); margin-bottom:1.5rem;">
+          Bossman has an extraordinary natural talent for the hurdles. His ability to maintain a locked stride pattern and attack each barrier shows a maturity far beyond his years. He is destined for national honours.
+        </p>
+        <div style="display:flex; align-items:center; gap:0.8rem;">
+          <div style="width:40px; height:40px; background:linear-gradient(135deg,var(--gold),var(--red)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-family:'Bebas Neue',sans-serif; color:var(--dark);">CO</div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.9rem; font-weight:700; letter-spacing:1px;">Coach Osei</div>
+            <div style="font-size:0.75rem; color:var(--gray); letter-spacing:1px;">Athletics Coach · Prempeh College</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:2rem; position:relative; border-top:3px solid var(--red);">
+        <div style="font-size:2.5rem; color:var(--red); font-family:'Bebas Neue',sans-serif; line-height:1; margin-bottom:1rem; opacity:0.4;">"</div>
+        <p style="font-size:0.95rem; line-height:1.75; color:rgba(245,245,240,0.65); margin-bottom:1.5rem;">
+          Watching Bossman break the regional record was electric. He ran with the calmness of a veteran and the fire of a champion. The Ashanti Region has produced something truly special in this young man.
+        </p>
+        <div style="display:flex; align-items:center; gap:0.8rem;">
+          <div style="width:40px; height:40px; background:linear-gradient(135deg,var(--red),#ff6666); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-family:'Bebas Neue',sans-serif; color:var(--white);">AK</div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.9rem; font-weight:700; letter-spacing:1px;">Ama Kyei</div>
+            <div style="font-size:0.75rem; color:var(--gray); letter-spacing:1px;">Sports Journalist · Citi Sports Ghana</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:2rem; position:relative; border-top:3px solid #4ade80;">
+        <div style="font-size:2.5rem; color:#4ade80; font-family:'Bebas Neue',sans-serif; line-height:1; margin-bottom:1rem; opacity:0.4;">"</div>
+        <p style="font-size:0.95rem; line-height:1.75; color:rgba(245,245,240,0.65); margin-bottom:1.5rem;">
+          His work ethic is unmatched. Long after everyone else has finished training, Bossman is still drilling his hurdle mechanics. That dedication is what separates good athletes from great ones.
+        </p>
+        <div style="display:flex; align-items:center; gap:0.8rem;">
+          <div style="width:40px; height:40px; background:linear-gradient(135deg,#006B3F,#4ade80); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-family:'Bebas Neue',sans-serif; color:var(--white);">KA</div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.9rem; font-weight:700; letter-spacing:1px;">Kwame Asante</div>
+            <div style="font-size:0.75rem; color:var(--gray); letter-spacing:1px;">Teammate · Prempeh College Athletics</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── NEWS / UPDATES ─── -->
+<section id="news" style="background:var(--dark2); padding:6rem 4rem;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="fade-in" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:3rem;">
+      <div>
+        <p class="section-label">Latest</p>
+        <h2 class="section-title">News & <span class="title-accent">Updates</span></h2>
+      </div>
+      <a href="#contact" style="font-family:'Barlow Condensed',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(255,209,0,0.4); padding-bottom:2px;">Press Inquiries →</a>
+    </div>
+    <div style="display:grid; grid-template-columns:2fr 1fr; gap:1.5rem;" class="fade-in">
+      <!-- Featured -->
+      <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); overflow:hidden;">
+        <div style="background:linear-gradient(135deg, #1a0505, #110808); height:220px; display:flex; align-items:center; justify-content:center; font-size:4rem; position:relative;">
+          🏆
+          <div style="position:absolute; top:1rem; left:1rem; background:var(--red); padding:0.3rem 0.75rem; font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:2px; text-transform:uppercase;">BREAKING</div>
+        </div>
+        <div style="padding:1.8rem;">
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem;">March 2026 · Regional Athletics</div>
+          <h3 style="font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:1px; line-height:1.15; margin-bottom:0.75rem;">Bossman Shatters Ashanti Regional Record with Historic 51.69s Run</h3>
+          <p style="font-size:0.9rem; line-height:1.7; color:rgba(245,245,240,0.55);">In a breathtaking performance at the 2025/26 Ashanti Region Super Zonal Championships, Bossman Kusi Appiah of Prempeh College obliterated the regional record in the Boys' 400m Hurdles, crossing the line in an incredible 51.69 seconds — a new benchmark for Ashanti Region scholastic athletics.</p>
+        </div>
+      </div>
+      <!-- Side articles -->
+      <div style="display:flex; flex-direction:column; gap:1.5rem;">
+        <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:1.5rem; display:flex; gap:1rem; align-items:flex-start;">
+          <div style="font-size:2rem; flex-shrink:0;">🥇</div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin-bottom:0.3rem;">Feb 2026</div>
+            <h4 style="font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:0.5px; margin-bottom:0.3rem;">Gold at Sub-Regional Trials</h4>
+            <p style="font-size:0.8rem; color:rgba(245,245,240,0.45); line-height:1.5;">Bossman claimed top spot in the sub-regional qualifiers, posting a strong 52.34s ahead of the Ashanti regional finals.</p>
+          </div>
+        </div>
+        <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:1.5rem; display:flex; gap:1rem; align-items:flex-start;">
+          <div style="font-size:2rem; flex-shrink:0;">📺</div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin-bottom:0.3rem;">Mar 2026</div>
+            <h4 style="font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:0.5px; margin-bottom:0.3rem;">Featured on Citi Sports Ghana</h4>
+            <p style="font-size:0.8rem; color:rgba(245,245,240,0.45); line-height:1.5;">His record-breaking run was covered live by Citi Sports Ghana, sparking national conversation about his future.</p>
+          </div>
+        </div>
+        <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.05); padding:1.5rem; display:flex; gap:1rem; align-items:flex-start;">
+          <div style="font-size:2rem; flex-shrink:0;">🎯</div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem;">Coming Up</div>
+            <h4 style="font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; letter-spacing:0.5px; margin-bottom:0.3rem;">National Championships Target</h4>
+            <p style="font-size:0.8rem; color:rgba(245,245,240,0.45); line-height:1.5;">Eyeing the Ghana Schools & Colleges National Championship title — and a sub-51 second breakthrough.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SPONSORS / SUPPORT ─── -->
+<section id="sponsors" style="background:var(--dark); padding:5rem 4rem; border-top:1px solid rgba(255,255,255,0.04);">
+  <div style="max-width:1200px; margin:0 auto; text-align:center;" class="fade-in">
+    <p style="font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:var(--gray); margin-bottom:2rem;">Support & Affiliation</p>
+    <div style="display:flex; gap:3rem; justify-content:center; flex-wrap:wrap; align-items:center;">
+      <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.06); padding:1.2rem 2.5rem; display:flex; align-items:center; gap:0.75rem;">
+        <span style="font-size:1.5rem;">🏫</span>
+        <span style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:2px; color:rgba(245,245,240,0.5);">Prempeh College</span>
+      </div>
+      <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.06); padding:1.2rem 2.5rem; display:flex; align-items:center; gap:0.75rem;">
+        <span style="font-size:1.5rem;">🇬🇭</span>
+        <span style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:2px; color:rgba(245,245,240,0.5);">Ghana Athletics</span>
+      </div>
+      <div style="background:var(--dark3); border:1px solid rgba(255,209,0,0.15); padding:1.2rem 2.5rem; display:flex; align-items:center; gap:0.75rem; position:relative;">
+        <span style="font-size:1.5rem;">🤝</span>
+        <span style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:2px; color:var(--gold);">Become A Sponsor</span>
+        <div style="position:absolute; top:-10px; right:-10px; background:var(--red); padding:0.2rem 0.5rem; font-family:'Barlow Condensed',sans-serif; font-size:0.6rem; font-weight:700; letter-spacing:1px; text-transform:uppercase;">Open</div>
+      </div>
+      <div style="background:var(--dark3); border:1px solid rgba(255,255,255,0.06); padding:1.2rem 2.5rem; display:flex; align-items:center; gap:0.75rem;">
+        <span style="font-size:1.5rem;">🏟️</span>
+        <span style="font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:2px; color:rgba(245,245,240,0.5);">Ashanti Region AA</span>
+      </div>
+    </div>
+    <p style="margin-top:2rem; font-size:0.85rem; color:var(--gray); max-width:480px; margin-left:auto; margin-right:auto; line-height:1.6;">
+      Interested in sponsoring a rising Ghanaian athletics star? <a href="#contact" style="color:var(--gold); text-decoration:none;">Get in touch</a> to discuss partnership opportunities.
+    </p>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info fade-in">
+      <p class="section-label">Work Together</p>
+      <h2 class="section-title">Get In <span class="title-accent">Touch</span></h2>
+      <p class="contact-desc">
+        Scouts, sponsors, media, coaching inquiries, or collaboration opportunities — reach out through any of the channels below. Bossman is ready for the next level.
+      </p>
+      <div class="contact-links">
+        <a href="#" class="contact-link">
+          <span class="contact-link-icon">📧</span>
+          <div class="contact-link-info">
+            <div class="contact-link-type">Email</div>
+            <div class="contact-link-value">bossman.kusiappiah@athletics.gh</div>
+          </div>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="contact-link-icon">📍</span>
+          <div class="contact-link-info">
+            <div class="contact-link-type">Location</div>
+            <div class="contact-link-value">Kumasi, Ashanti Region, Ghana 🇬🇭</div>
+          </div>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="contact-link-icon">🏫</span>
+          <div class="contact-link-info">
+            <div class="contact-link-type">Institution</div>
+            <div class="contact-link-value">Prempeh College, Kumasi</div>
+          </div>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="contact-link-icon">📱</span>
+          <div class="contact-link-info">
+            <div class="contact-link-type">Social Media</div>
+            <div class="contact-link-value">@bossman_kusiappiah</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form fade-in">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="e.g. John Mensah" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="your@email.com" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Inquiry Type</label>
+        <select class="form-select">
+          <option>Scouting / Recruitment</option>
+          <option>Sponsorship</option>
+          <option>Media / Press</option>
+          <option>Coaching Partnership</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Tell us about your inquiry..."></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%; text-align:center; display:block; border:none;">
+        Send Message
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">Bossman Kusi Appiah</div>
+  <div class="footer-copy">© 2026 · 400M Hurdles · Ghana 🇬🇭 · Prempeh College</div>
+  <div class="footer-socials">
+    <a href="#" class="footer-social">𝕏</a>
+    <a href="#" class="footer-social">IG</a>
+    <a href="#" class="footer-social">FB</a>
+    <a href="#" class="footer-social">YT</a>
+  </div>
+</footer>
+
+<script>
+  // ── Scroll fade-in ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── Stat counters ──
+  const counters = document.querySelectorAll('.stat-number');
+  let counted = false;
+  const statsObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !counted) {
+      counted = true;
+      counters.forEach(counter => {
+        const target = counter.textContent.trim();
+        if (target === '#1') return;
+        const num = parseFloat(target);
+        if (isNaN(num)) return;
+        let start = num - 3; const step = (num - start) / 40; let current = start;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= num) { counter.textContent = target; clearInterval(timer); }
+          else counter.textContent = current.toFixed(2);
+        }, 25);
+      });
+    }
+  }, { threshold: 0.5 });
+  const statsSection = document.querySelector('#stats');
+  if (statsSection) statsObserver.observe(statsSection);
+
+  // ── Progress bars ──
+  const progObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.prog-bar').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+        progObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  const progSection = document.querySelector('#progress');
+  if (progSection) progObserver.observe(progSection);
+
+  // ── Countdown Timer ──
+  function updateCountdown() {
+    const target = new Date('2026-08-15T09:00:00');
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      return;
+    }
+    const days  = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins  = Math.floor((diff % 3600000) / 60000);
+    const secs  = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent  = String(days).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ── Training day click ──
+  document.querySelectorAll('.training-day').forEach(day => {
+    day.addEventListener('click', () => {
+      document.querySelectorAll('.training-day').forEach(d => d.classList.remove('active'));
+      day.classList.add('active');
+    });
+  });
+
+  // ── Contact form submit ──
+  const formBtn = document.querySelector('.btn-primary[style]');
+  if (formBtn) {
+    formBtn.addEventListener('click', () => {
+      formBtn.textContent = '✓ Message Sent!';
+      formBtn.style.background = '#006B3F';
+      setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 3000);
+    });
+  }
+
+  // ── Mobile menu ──
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+  }
+
+  // ── Smooth scroll ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // ── Nav shrink on scroll ──
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 80) nav.style.padding = '0.7rem 3rem';
+    else nav.style.padding = '1.2rem 3rem';
+  });
+
+  // ── Back to top button ──
+  const btt = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) btt.style.opacity = '1';
+    else btt.style.opacity = '0';
+  });
+  btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+<!-- Back to top -->
+<button id="backToTop" style="
+  position:fixed; bottom:2rem; right:2rem; z-index:200;
+  width:46px; height:46px;
+  background:var(--gold); border:none; cursor:pointer;
+  font-size:1.2rem; opacity:0; transition:opacity 0.3s;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  display:flex; align-items:center; justify-content:center;
+" title="Back to top">↑</button>
+</body>
+</html>
