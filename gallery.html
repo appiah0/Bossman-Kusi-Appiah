@@ -434,6 +434,14 @@
       <div class="gcard__zoom">⤢</div>
     </div>
 
+    <div class="gcard" data-filter="trophy" onclick="openLB(this)" data-src="images/portrait.jpg" data-caption="Portrait picture at the stadium">
+      <img class="gcard__img" src="images/podium-crowd.jpg" alt="Bossman Kusi Appiah portrait picture at the stadium" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🎉 Portrait . At Stadium</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
+
+
     <div class="gcard" data-filter="general" onclick="openLB(this)" data-src="images/laughing.jpg" data-caption="Pure Joy Backstage — After the Win">
       <img class="gcard__img" src="images/laughing.jpg" alt="Bossman Kusi Appiah laughing with joy backstage after winning" loading="lazy"/>
       <div class="gcard__overlay"></div>
@@ -496,16 +504,29 @@
   <div class="gallery-masonry">
 
     <!-- YOUR OWN VIDEO — change the src to your own video file -->
+<!-- LOCAL VIDEO 1 -->
     <div class="gcard gcard--video" data-filter="video">
       <video controls playsinline preload="metadata"
-        poster="images/fist-trophy.jpg"
+        poster="images/team-celebrate.jpg"
         style="width:100%;height:260px;object-fit:cover;display:block;background:#000;">
         <!--
           TO ADD YOUR OWN VIDEO:
           Replace the src below with your video file path, e.g:
           <source src="videos/race.mp4" type="video/mp4">
         -->
-        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+        <source src="team-celebration.mp4" type="video/mp4">
+      </video>
+      <div class="gcard__caption" style="opacity:1;position:relative;padding:0.75rem 1rem;background:var(--dark3);">
+        📹 Race Highlight · Replace with your own video
+      </div>
+    </div>
+
+<!-- LOCAL VIDEO 2 -->
+    <div class="gcard gcard--video" data-filter="video">
+      <video controls playsinline preload="metadata"
+        poster="images/first-trophy.jpg"
+        style="width:100%;height:260px;object-fit:cover;display:block;background:#000;">
+        <source src="receive-trophy.mp4" type="video/mp4">
       </video>
       <div class="gcard__caption" style="opacity:1;position:relative;padding:0.75rem 1rem;background:var(--dark3);">
         📹 Race Highlight · Replace with your own video
