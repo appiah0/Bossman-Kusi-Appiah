@@ -297,6 +297,7 @@
   <button class="filter-btn" onclick="filterGallery('record', this)">⏱️ Records</button>
   <button class="filter-btn" onclick="filterGallery('team', this)">👥 Team</button>
   <button class="filter-btn" onclick="filterGallery('video', this)">▶ Videos</button>
+  <button class="filter-btn" onclick="filterGallery('general', this)">⚽ Football & More</button>
 </div>
 
 <!-- GALLERY GRID -->
@@ -567,11 +568,165 @@
     </div>
 
 
+    <!-- VIDEO: 800m Regional Champion 2025 (~26MB - 1:59) -->
+    <div class="gcard gcard--video" data-filter="video">
+      <video controls playsinline preload="metadata"
+        poster="images/wha-prempeh778.jpg"
+        style="width:100%;height:260px;object-fit:cover;display:block;background:#000;">
+        <source src="videos/race-800m-regional-2025.mp4" type="video/mp4">
+      </video>
+      <div class="gcard__caption" style="opacity:1;position:relative;padding:0.75rem 1rem;background:var(--dark3);">
+        🏃 800m Ashanti Regional Champion 2025 · Race Video
+      </div>
+    </div>
+
+    <!-- VIDEO: 400m Hurdles 2026 -->
+    <div class="gcard gcard--video" data-filter="video">
+      <video controls playsinline preload="metadata"
+        poster="images/record-5169.jpg"
+        style="width:100%;height:260px;object-fit:cover;display:block;background:#000;">
+        <source src="videos/race-hurdles-2026.mp4" type="video/mp4">
+      </video>
+      <div class="gcard__caption" style="opacity:1;position:relative;padding:0.75rem 1rem;background:var(--dark3);">
+        ⏱️ 400m Hurdles Race · 2026 Season
+      </div>
+    </div>
+
+    <!-- VIDEO: Celebration 2026 -->
+    <div class="gcard gcard--video" data-filter="video">
+      <video controls playsinline preload="metadata"
+        poster="images/fist-trophy.jpg"
+        style="width:100%;height:260px;object-fit:cover;display:block;background:#000;">
+        <source src="videos/celebration-2026.mp4" type="video/mp4">
+      </video>
+      <div class="gcard__caption" style="opacity:1;position:relative;padding:0.75rem 1rem;background:var(--dark3);">
+        🎉 Championship Celebration · 2026
+      </div>
+    </div>
+
+    <!-- VIDEO: National Race 2026 -->
+    <div class="gcard gcard--video" data-filter="video">
+      <video controls playsinline preload="metadata"
+        poster="images/natl-receiving-trophy.jpg"
+        style="width:100%;height:260px;object-fit:cover;display:block;background:#000;">
+        <source src="videos/race-national-2026.mp4" type="video/mp4">
+      </video>
+      <div class="gcard__caption" style="opacity:1;position:relative;padding:0.75rem 1rem;background:var(--dark3);">
+        🥇 National Championship Race · 2026
+      </div>
+    </div>
+
     <!--
       ADD MORE VIDEOS HERE — copy either block above.
       For your own video: use the <video> block.
       For YouTube: use the gcard--yt block with the YouTube ID.
     -->
+
+  </div>
+
+  <!-- ── FOOTBALL ── -->
+  <div class="gallery-section-title">⚽ Football</div>
+  <div class="gallery-masonry">
+
+    <div class="gcard tall" data-filter="general" onclick="openLB(this)" data-src="images/wha-div2-black.jpg" data-caption="Bossman in Bafag Rainbow FC jersey — Division 2 player at age 15">
+      <img class="gcard__img" src="images/wha-div2-black.jpg" alt="Bossman Kusi Appiah Bafag Rainbow FC Division 2 black jersey" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">⚽ Bafag Rainbow FC · Division 2 · Age 15</div>
+      <div class="gcard__zoom">⤢</div>
+      <span class="gcard__tag" style="background:#4ade80;color:#000;">Div 2</span>
+    </div>
+
+    <div class="gcard" data-filter="general" onclick="openLB(this)" data-src="images/wha-best-athlete-red.jpg" data-caption="Overall Best Male Athlete 2025 — Ashanti Region Super Zonals · Bossman holding Mattress Home GH500 award">
+      <img class="gcard__img" src="images/wha-best-athlete-red.jpg" alt="Bossman Kusi Appiah Overall Best Male Athlete 2025 Ashanti Region Super Zonals" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🏆 Overall Best Male Athlete · 2025 Super Zonals</div>
+      <div class="gcard__zoom">⤢</div>
+      <span class="gcard__tag" style="background:var(--gold);color:var(--dark);">Best Athlete</span>
+    </div>
+
+    <div class="gcard" data-filter="general" onclick="openLB(this)" data-src="images/wha-squad-photo.jpg" data-caption="Prempeh College Football Squad — with coaching staff">
+      <img class="gcard__img" src="images/wha-squad-photo.jpg" alt="Prempeh College football squad team photo with coaching staff" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">👥 Prempeh College Football Squad</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
+
+    <div class="gcard" data-filter="general" onclick="openLB(this)" data-src="images/wha-ubassa-result.jpg" data-caption="UBaSSA Games UG@75 2023 — Official results showing Bossman as JHS Boys Best Football Player · KNUST">
+      <img class="gcard__img" src="images/wha-ubassa-result.jpg" alt="UBaSSA Games 2023 result sheet Bossman Kwesi Appiah JHS Boys best football player" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🏅 UBaSSA Best Player Result Sheet · 2023</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
+
+    <div class="gcard" data-filter="general" onclick="openLB(this)" data-src="images/natl-team-yellow.jpg" data-caption="Prempeh College National Athletics & Football team — yellow and white kits">
+      <img class="gcard__img" src="images/natl-team-yellow.jpg" alt="Prempeh College athletics team yellow white kits national level" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🏅 Prempeh College National Team</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
+
+  </div>
+
+  <!-- ── NATIONAL CHAMPIONSHIPS ── -->
+  <div class="gallery-section-title">🌍 National Championships</div>
+  <div class="gallery-masonry">
+
+    <div class="gcard wide" data-filter="trophy" onclick="openLB(this)" data-src="images/natl-best-athlete.jpg" data-caption="National Championships Podium — Bossman on the winners platform with scoreboard">
+      <img class="gcard__img" src="images/natl-best-athlete.jpg" alt="Bossman Kusi Appiah national championships podium with scoreboard" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🥇 National Championships Podium</div>
+      <div class="gcard__zoom">⤢</div>
+      <span class="gcard__tag" style="background:var(--gold);color:var(--dark);">National</span>
+    </div>
+
+    <div class="gcard" data-filter="trophy" onclick="openLB(this)" data-src="images/natl-receiving-trophy.jpg" data-caption="Bossman receiving the championship trophy — national level">
+      <img class="gcard__img" src="images/natl-receiving-trophy.jpg" alt="Bossman Kusi Appiah receiving championship trophy at national level" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🏆 Receiving Championship Trophy</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
+
+    <div class="gcard" data-filter="trophy" onclick="openLB(this)" data-src="images/wha-bronze-medals.jpg" data-caption="Bossman and teammates showing bronze medals — Prempeh College national championships">
+      <img class="gcard__img" src="images/wha-bronze-medals.jpg" alt="Bossman Kusi Appiah and Prempeh College teammates with bronze medals national championships" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🥉 Bronze Medals · Prempeh National</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
+
+    <div class="gcard" data-filter="record" onclick="openLB(this)" data-src="images/wha-prempeh778.jpg" data-caption="Bossman #778 PREMPEH — ready on the track at Super Zonals · Ashanti Region">
+      <img class="gcard__img" src="images/wha-prempeh778.jpg" alt="Bossman Kusi Appiah number 778 PREMPEH at Ashanti Region Super Zonals" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🏃 #778 PREMPEH · Super Zonals</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
+
+    <div class="gcard" data-filter="general" onclick="openLB(this)" data-src="images/wha-national-medal.jpg" data-caption="Bossman showing national medal — Ghana Premier League pitch · Prempeh College kit">
+      <img class="gcard__img" src="images/wha-national-medal.jpg" alt="Bossman Kusi Appiah showing national medal on Ghana Premier League pitch" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🏅 National Medal · Prempeh College</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
+
+    <div class="gcard" data-filter="general" onclick="openLB(this)" data-src="images/wha-athletics-team.jpg" data-caption="Bossman Kusi Appiah in Prempeh College Athletics Team 2026 jersey">
+      <img class="gcard__img" src="images/wha-athletics-team.jpg" alt="Bossman Kusi Appiah Prempeh College Athletics Team 2026 jersey Lomen TV" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">⚡ Prempeh Athletics Team 2026</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
+
+    <div class="gcard" data-filter="general" onclick="openLB(this)" data-src="images/wha-jhs-portrait.jpg" data-caption="Bossman in JHS — wearing Ghana national colours white shirt with flag stripe">
+      <img class="gcard__img" src="images/wha-jhs-portrait.jpg" alt="Bossman Kusi Appiah JHS portrait in Ghana national colours" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🇬🇭 JHS Days · Ghana National Colours</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
+
+    <div class="gcard" data-filter="record" onclick="openLB(this)" data-src="images/wha-block8-wsports.jpg" data-caption="Bossman on starting block 8 — W Sports Ashanti Region Championships">
+      <img class="gcard__img" src="images/wha-block8-wsports.jpg" alt="Bossman Kusi Appiah starting block 8 W Sports Ashanti Region Championships" loading="lazy"/>
+      <div class="gcard__overlay"></div>
+      <div class="gcard__caption">🎯 Starting Block 8 · W Sports</div>
+      <div class="gcard__zoom">⤢</div>
+    </div>
 
   </div>
 
