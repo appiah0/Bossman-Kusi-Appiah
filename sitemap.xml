@@ -1,31 +1,302 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- ══ HOME PAGE ══ -->
   <url>
     <loc>https://appiah0.github.io/Bossman-Kusi-Appiah/</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/fist-trophy.jpg</image:loc><image:title>Bossman Kusi Appiah champion fist pump with Schools and Colleges trophy</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/record-5169.jpg</image:loc><image:title>Bossman Kusi Appiah beside 51.69s scoreboard — Ashanti Regional Record</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/kissing-trophy.jpg</image:loc><image:title>Bossman Kusi Appiah kissing the champions trophy</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/holding-trophy.jpg</image:loc><image:title>Bossman Kusi Appiah holding trophy at Schools and Colleges Championships</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/interview.jpg</image:loc><image:title>Bossman Kusi Appiah post-race interview wearing Prempeh College jersey #757</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/trophy-presentation.jpg</image:loc><image:title>Bossman Kusi Appiah receiving trophy at official presentation ceremony</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/team-photo.jpg</image:loc><image:title>Prempeh College Athletics Team — champions group photo</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/podium-raise.jpg</image:loc><image:title>Bossman Kusi Appiah raises trophy high on the winners podium</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/team-celebrate.jpg</image:loc><image:title>Bossman Kusi Appiah and Prempeh College teammates celebrating championship win</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/podium-crowd.jpg</image:loc><image:title>Bossman Kusi Appiah on the podium before a packed stadium crowd</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/podium-3.jpg</image:loc><image:title>Top 3 athletes on podium — Bossman Kusi Appiah gold medalist 400m hurdles</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/laughing.jpg</image:loc><image:title>Bossman Kusi Appiah laughing with joy backstage after winning</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/resting.jpg</image:loc><image:title>Bossman Kusi Appiah resting post-race — exhaustion of a champion</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/two-trophies.jpg</image:loc><image:title>Double trophy moment at the Elite Schools League</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/record-poster.jpg</image:loc><image:title>Official Ashanti Region Schools Record poster — Bossman Kusi Appiah 400m Hurdles</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/prempeh-post.jpg</image:loc><image:title>Prempeh College Facebook post announcing World U20 Athletics Championship qualification</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/elite-post.jpg</image:loc><image:title>Elite Schools League post confirming Bossman Kusi Appiah World U20 qualification</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/trophy.jpg</image:loc><image:title>Bossman Kusi Appiah lifting the championship trophy at Elite Schools League</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/cape-coast.jpg</image:loc><image:title>Bossman Kusi Appiah with 52.34s scoreboard at Cape Coast Open Championship 2026</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/on-blocks.jpg</image:loc><image:title>Bossman Kusi Appiah seated on starting block at Elite Schools League</image:title></image:image>
-    <image:image><image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/classroom.jpg</image:loc><image:title>Bossman Kusi Appiah student at Prempeh College Kumasi Ghana</image:title></image:image>
+
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/fist-trophy.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah champion fist pump with Schools and Colleges trophy</image:title>
+      <image:caption>Bossman Kusi Appiah celebrates winning the 400m Hurdles at the Ashanti Region Schools and Colleges Athletics Championships</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/record-5169.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah beside 51.69s scoreboard — Ashanti Regional Record</image:title>
+      <image:caption>Bossman Kusi Appiah next to the scoreboard showing his Ashanti Regional Record of 51.69 seconds in the 400m Hurdles</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/trophy.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah lifting the championship trophy at Elite Schools League</image:title>
+      <image:caption>Bossman Kusi Appiah lifts the championship trophy after winning gold at the Elite Schools League</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/kissing-trophy.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah kissing the champions trophy</image:title>
+      <image:caption>Bossman Kusi Appiah kisses the champions trophy after his gold medal win at the Ashanti Region Schools Athletics Championships</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/holding-trophy.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah holding trophy at Schools and Colleges Championships</image:title>
+      <image:caption>Bossman Kusi Appiah holds the championship trophy at the Ghana Schools and Colleges Athletics Championships, representing Prempeh College</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/interview.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah post-race interview wearing Prempeh College jersey #757</image:title>
+      <image:caption>Bossman Kusi Appiah gives a post-race interview wearing his Prempeh College jersey number 757 after winning the 400m Hurdles</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/trophy-presentation.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah receiving trophy at official presentation ceremony</image:title>
+      <image:caption>Bossman Kusi Appiah receives the championship trophy at the official prize presentation ceremony</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/team-photo.jpg</image:loc>
+      <image:title>Prempeh College Athletics Team — champions group photo</image:title>
+      <image:caption>Prempeh College Athletics Team pose for a group champions photo after their championship victory</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/podium-raise.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah raises trophy high on the winners podium</image:title>
+      <image:caption>Bossman Kusi Appiah raises the trophy high on the winners podium at the Ashanti Region Athletics Championships</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/team-celebrate.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah and Prempeh College teammates celebrating championship win</image:title>
+      <image:caption>Bossman Kusi Appiah celebrates with his Prempeh College athletics teammates after winning the championship</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/podium-crowd.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah on the podium before a packed stadium crowd</image:title>
+      <image:caption>Bossman Kusi Appiah stands on the winners podium in front of a packed stadium crowd at the Ghana Schools Athletics Championships</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/podium-3.jpg</image:loc>
+      <image:title>Top 3 athletes on podium — Bossman Kusi Appiah gold medalist 400m hurdles</image:title>
+      <image:caption>The top three athletes on the podium with Bossman Kusi Appiah as gold medalist in the 400m Hurdles Boys event</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/laughing.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah laughing with joy backstage after winning</image:title>
+      <image:caption>Bossman Kusi Appiah laughs with joy backstage after his championship win at the Ashanti Region Schools Athletics</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/resting.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah resting post-race — exhaustion of a champion</image:title>
+      <image:caption>Bossman Kusi Appiah rests post-race after his record-breaking 400m Hurdles performance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/two-trophies.jpg</image:loc>
+      <image:title>Double trophy moment at the Elite Schools League</image:title>
+      <image:caption>Bossman Kusi Appiah holds two trophies after winning double gold at the Elite Schools League athletics competition</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/record-poster.jpg</image:loc>
+      <image:title>Official Ashanti Region Schools Record poster — Bossman Kusi Appiah 400m Hurdles</image:title>
+      <image:caption>Official record poster showing Bossman Kusi Appiah's Ashanti Region Schools record in the 400m Hurdles for Prempeh College</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/prempeh-post.jpg</image:loc>
+      <image:title>Prempeh College Facebook post announcing World U20 Athletics Championship qualification</image:title>
+      <image:caption>Prempeh College's official announcement confirming Bossman Kusi Appiah's qualification for the 2026 World U20 Athletics Championships in Eugene, Oregon, USA</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/elite-post.jpg</image:loc>
+      <image:title>Elite Schools League post confirming Bossman Kusi Appiah World U20 qualification</image:title>
+      <image:caption>Elite Schools League confirms Bossman Kusi Appiah's qualification for the 2026 World U20 Athletics Championships with a time of 52.34 seconds</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/cape-coast.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah with 52.34s scoreboard at Cape Coast Open Championship 2026</image:title>
+      <image:caption>Bossman Kusi Appiah beside the scoreboard showing his winning time of 52.34 seconds at the Cape Coast Open Championship 2026</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/on-blocks.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah seated on starting block at Elite Schools League</image:title>
+      <image:caption>Bossman Kusi Appiah focused on the starting block before his race at the Elite Schools League 400m Hurdles event</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/classroom.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah student at Prempeh College Kumasi Ghana</image:title>
+      <image:caption>Bossman Kusi Appiah as a student at Prempeh College in Kumasi, Ghana — combining academic excellence with elite athletics</image:caption>
+    </image:image>
+
+    <!-- Home page video -->
+    <video:video>
+      <video:thumbnail_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/wha-block8-wsports.jpg</video:thumbnail_loc>
+      <video:title>Bossman Kusi Appiah — 400m Hurdles Race Highlight</video:title>
+      <video:description>Race highlight of Bossman Kusi Appiah competing in the 400m Hurdles for Prempeh College, Ghana. Ashanti Regional Record holder (51.69s) and 2026 World U20 Athletics Championships qualifier.</video:description>
+      <video:content_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/videos/race.mp4</video:content_loc>
+      <video:player_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/</video:player_loc>
+      <video:duration>120</video:duration>
+      <video:publication_date>2026-02-26</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
   </url>
+
+  <!-- ══ NEWS PAGE ══ -->
+  <url>
+    <loc>https://appiah0.github.io/Bossman-Kusi-Appiah/news.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/prempeh-post.jpg</image:loc>
+      <image:title>Prempeh College announces Bossman Kusi Appiah World U20 qualification</image:title>
+      <image:caption>News: Prempeh College announces Bossman Kusi Appiah's qualification for the 2026 World U20 Athletics Championships in Oregon, USA</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/cape-coast.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah wins gold at Cape Coast Open 2026 — 52.34s</image:title>
+      <image:caption>News: Bossman Kusi Appiah wins the U20 Boys 400m Hurdles at the Cape Coast Open Championship 2026 in 52.34 seconds</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/record-poster.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah Ashanti Regional Record 51.69s — official poster</image:title>
+      <image:caption>Media coverage of Bossman Kusi Appiah setting the Ashanti Regional Record of 51.69 seconds in the 400m Hurdles for Prempeh College</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ══ GALLERY PAGE ══ -->
+  <url>
+    <loc>https://appiah0.github.io/Bossman-Kusi-Appiah/gallery.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/fist-trophy.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah champion fist with trophy — full gallery</image:title>
+      <image:caption>Gallery: Bossman Kusi Appiah celebrates with a champion fist pump holding the Schools and Colleges trophy</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/podium-raise.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah raises trophy on the podium</image:title>
+      <image:caption>Gallery: Bossman Kusi Appiah raises the winners trophy high on the podium at the Ashanti Region Athletics Championships</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/record-5169.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah 51.69s Ashanti Regional Record scoreboard</image:title>
+      <image:caption>Gallery: Bossman Kusi Appiah poses with the scoreboard showing his Ashanti Regional Record of 51.69 seconds</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/team-celebrate.jpg</image:loc>
+      <image:title>Prempeh College team celebration — championship win</image:title>
+      <image:caption>Gallery: Bossman Kusi Appiah and Prempeh College teammates celebrate their championship victory</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/on-blocks.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah on starting blocks before the race</image:title>
+      <image:caption>Gallery: Bossman Kusi Appiah focused and ready on the starting blocks before his 400m Hurdles race</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/wha-div2-black.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah in Bafag Rainbow FC Division 2 black jersey</image:title>
+      <image:caption>Gallery: Bossman Kusi Appiah wearing the Bafag Rainbow FC Division 2 black jersey as a registered player at age 15</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/wha-squad-photo.jpg</image:loc>
+      <image:title>Prempeh College SHS Football Squad — bronze Ashanti Region 2024 and 2026</image:title>
+      <image:caption>Gallery: Prempeh College SHS football squad with coaching staff, bronze medalists at the Ashanti Regional inter-schools soccer competition in 2024 and 2026</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/wha-best-athlete-red.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah Overall Best Male Athlete 2025 — Ashanti Region Super Zonals</image:title>
+      <image:caption>Gallery: Bossman Kusi Appiah receives the Overall Best Male Athlete award at the 2025 Ashanti Region Super Zonals</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/natl-best-athlete.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah National Championships podium with scoreboard</image:title>
+      <image:caption>Gallery: Bossman Kusi Appiah on the national championships podium in front of the scoreboard</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/natl-receiving-trophy.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah receiving championship trophy at national level</image:title>
+      <image:caption>Gallery: Bossman Kusi Appiah receives the championship trophy at the national athletics competition</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/wha-block8-wsports.jpg</image:loc>
+      <image:title>Bossman Kusi Appiah on starting block 8 — W Sports Ashanti Region Championships</image:title>
+      <image:caption>Gallery: Bossman Kusi Appiah crouches on starting block 8 at the W Sports Ashanti Region Athletics Championships</image:caption>
+    </image:image>
+
+    <!-- ── Local MP4 videos ── -->
+
+    <video:video>
+      <video:thumbnail_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/team-celebrate.jpg</video:thumbnail_loc>
+      <video:title>Bossman Kusi Appiah — Team Celebration After Championship Win</video:title>
+      <video:description>Bossman Kusi Appiah and Prempeh College teammates celebrate their championship victory at the Ashanti Region Schools and Colleges Athletics Championships.</video:description>
+      <video:content_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/videos/team-celebration.mp4</video:content_loc>
+      <video:player_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/gallery.html</video:player_loc>
+      <video:publication_date>2026-02-28</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/fist-trophy.jpg</video:thumbnail_loc>
+      <video:title>Bossman Kusi Appiah — Receiving the Champions Trophy</video:title>
+      <video:description>Bossman Kusi Appiah receives the championship trophy after winning the 400m Hurdles at the Ashanti Region Schools and Colleges Athletics Championships for Prempeh College.</video:description>
+      <video:content_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/videos/receive-trophy.mp4</video:content_loc>
+      <video:player_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/gallery.html</video:player_loc>
+      <video:publication_date>2026-02-28</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/wha-prempeh778.jpg</video:thumbnail_loc>
+      <video:title>Bossman Kusi Appiah — 800m Ashanti Regional Champion 2025 Race Video</video:title>
+      <video:description>Full race video of Bossman Kusi Appiah winning the 800m at the 2025 Ashanti Regional Super Zonals for Prempeh College. Three-time consecutive Ashanti Region 800m champion.</video:description>
+      <video:content_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/videos/race-800m-regional-2025.mp4</video:content_loc>
+      <video:player_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/gallery.html</video:player_loc>
+      <video:duration>119</video:duration>
+      <video:publication_date>2025-02-28</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/record-5169.jpg</video:thumbnail_loc>
+      <video:title>Bossman Kusi Appiah — 400m Hurdles Race 2026 Season (Ashanti Regional Record 51.69s)</video:title>
+      <video:description>Race video of Bossman Kusi Appiah in the 2026 400m Hurdles season, in which he broke the Ashanti Regional Record with 51.69 seconds and qualified for the 2026 World U20 Athletics Championships in Eugene, Oregon.</video:description>
+      <video:content_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/videos/400m-hurdles-2026.mp4</video:content_loc>
+      <video:player_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/gallery.html</video:player_loc>
+      <video:publication_date>2026-02-26</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/fist-trophy.jpg</video:thumbnail_loc>
+      <video:title>Bossman Kusi Appiah — Championship Celebration 2026</video:title>
+      <video:description>Celebration video of Bossman Kusi Appiah after winning the 2026 400m Hurdles championship, representing Prempeh College at the Ashanti Region Schools Athletics.</video:description>
+      <video:content_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/videos/celebration-2026.mp4</video:content_loc>
+      <video:player_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/gallery.html</video:player_loc>
+      <video:publication_date>2026-02-28</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/natl-receiving-trophy.jpg</video:thumbnail_loc>
+      <video:title>Bossman Kusi Appiah — National Championship 400m Hurdles Race 2026</video:title>
+      <video:description>Race video from the 2026 National Open Championship in Cape Coast where Bossman Kusi Appiah won gold in the U20 Boys 400m Hurdles with 52.34 seconds, earning World U20 Athletics Championships qualification.</video:description>
+      <video:content_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/videos/race-national-2026.mp4</video:content_loc>
+      <video:player_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/gallery.html</video:player_loc>
+      <video:publication_date>2026-03-14</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/images/interview.jpg</video:thumbnail_loc>
+      <video:title>Bossman Kusi Appiah — Boys 400m Race 2024 Season</video:title>
+      <video:description>Boys 400m race video from the 2024 season featuring Bossman Kusi Appiah of Prempeh College at the Ashanti Region Schools and Colleges Athletics Championships.</video:description>
+      <video:content_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/videos/400m-2024.mp4</video:content_loc>
+      <video:player_loc>https://appiah0.github.io/Bossman-Kusi-Appiah/gallery.html</video:player_loc>
+      <video:publication_date>2024-03-01</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+
+  </url>
+
 </urlset>
