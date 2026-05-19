@@ -175,6 +175,7 @@ border-radius: 16px;
     font-family:'Barlow Condensed',sans-serif;
     font-size:0.62rem; font-weight:700; letter-spacing:2px;
     text-transform:uppercase; color:#fff;
+border-radius:8px;
   }
 
   /* ── SECTION DIVIDER ── */
@@ -668,7 +669,7 @@ border-radius: 16px;
       <div class="gcard__overlay"></div>
       <div class="gcard__caption">⚽ Bafag Rainbow FC · Division 2 · Age 15</div>
       <div class="gcard__zoom">⤢</div>
-      <span class="gcard__tag" style="background:#4ade80;color:#000;">Div 2</span>
+      <span class="gcard__tag" style="background:#4ade80;color:#000;border-radius:8px;">Div 2</span>
     </div>
 
 <div class="gcard tall" data-filter="general" onclick="openLB(this)" data-src="images/wha-div1-white.jpg" data-caption="Bossman in Bafag Rainbow FC jersey — Division 1 player at age 15">
@@ -676,7 +677,7 @@ border-radius: 16px;
       <div class="gcard__overlay"></div>
       <div class="gcard__caption">⚽ Bafag Rainbow FC · Division 1 · Age 15</div>
       <div class="gcard__zoom">⤢</div>
-      <span class="gcard__tag" style="background:#4ade80;color:#000;">Div 1</span>
+      <span class="gcard__tag" style="background:#4ade80;color:#000;border-radius:8px;">Div 1</span>
     </div>
     
     <div class="gcard" data-filter="general" onclick="openLB(this)" data-src="images/wha-national-medal.jpg" data-caption="Bossman showing national medal — Ghana Premier League pitch · Prempeh College kit">
@@ -684,7 +685,7 @@ border-radius: 16px;
       <div class="gcard__overlay"></div>
       <div class="gcard__caption">🏅 National Medal · Prempeh College</div>
       <div class="gcard__zoom">⤢</div>
-      <span class="gcard__tag" style="background:var(--gold);color:var(--dark);">Best Athlete</span>
+      <span class="gcard__tag" style="background:var(--gold);color:var(--dark);border-radius:8px;">Best Athlete</span>
     </div>
 
     <div class="gcard" data-filter="general" onclick="openLB(this)" data-src="images/wha-squad-photo.jpg" data-caption="Prempeh College Football Squad — with coaching staff">
@@ -719,7 +720,7 @@ border-radius: 16px;
       <div class="gcard__overlay"></div>
       <div class="gcard__caption">🥇 National Championships Podium</div>
       <div class="gcard__zoom">⤢</div>
-      <span class="gcard__tag" style="background:var(--gold);color:var(--dark);">National</span>
+      <span class="gcard__tag" style="background:var(--gold);color:var(--dark);border-radius:8px;">National</span>
     </div>
 
     <div class="gcard" data-filter="trophy" onclick="openLB(this)" data-src="images/natl-receiving-trophy.jpg" data-caption="Bossman receiving the championship trophy — national level">
@@ -773,13 +774,14 @@ border-radius: 16px;
 
   </div>
 
-  <!-- HOW TO ADD HINT -->
+  <!-- HOW TO ADD HINT
   <div class="add-hint">
     <strong>📸 To add more photos:</strong> Upload your image to the <strong>images/</strong> folder on GitHub, then copy any <strong>&lt;div class="gcard"&gt;</strong> block above, paste it in the right section, and update the image filename and caption.<br>
     <strong>▶ To add a YouTube video:</strong> Copy a <strong>gcard--yt</strong> block and replace the video ID (the part after <strong>youtu.be/</strong>) in both places. · <strong>▶ Own video:</strong> Add your .mp4 to a <strong>videos/</strong> folder and update the &lt;source src&gt; line.
   </div>
 
-</div><!-- end gallery-section -->
+</div>  -->
+<!-- end gallery-section -->
 
 <!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLB()">
