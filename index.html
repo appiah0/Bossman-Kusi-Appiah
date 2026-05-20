@@ -3321,13 +3321,43 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
 
   // ── Contact form submit ──
   const formBtn = document.querySelector('#contact .btn-primary');
-  if (formBtn) {
-    formBtn.addEventListener('click', () => {
-      formBtn.textContent = '\u2713 Message Sent!';
-      formBtn.style.background = '#006B3F';
-      setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 3000);
-    });
+const fields  = document.querySelectorAll('#contact .form-input, #contact .form-textarea, #contact .form-select');
+
+formBtn.addEventListener('click', async () => {
+  const data = {
+    name:    document.querySelector('#contact .form-input[placeholder*="Name"]').value,
+    email:   document.querySelector('#contact .form-input[type="email"]').value,
+    type:    document.querySelector('#contact .form-select').value,
+    message: document.querySelector('#contact .form-textarea').value,
+  };
+
+  if (!data.name || !data.email || !data.message) {
+    formBtn.textContent = '⚠ Please fill all fields';
+    formBtn.style.background = '#555';
+    setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 3000);
+    return;
   }
+
+  formBtn.textContent = 'Sending...';
+  formBtn.disabled = true;
+
+  const res = await fetch('https://formspree.io/f/mredpayy', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data),
+  });
+
+  if (res.ok) {
+    formBtn.textContent = '✓ Message Sent!';
+    formBtn.style.background = '#006B3F';
+    fields.forEach(f => f.value = '');
+  } else {
+    formBtn.textContent = '✗ Failed — try again';
+    formBtn.style.background = '#b91c1c';
+  }
+  formBtn.disabled = false;
+  setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 4000);
+});
 
   // ── Mobile menu ──
   const menuBtn = document.getElementById('menuBtn');
