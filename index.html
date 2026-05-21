@@ -1649,7 +1649,7 @@ border-radius:16px;
     #timeline > div > div:nth-child(2) > div { grid-template-columns: 1fr !important; }
     #timeline > div > div:nth-child(2) > div > div:nth-child(2) { display:none; }
     #timeline > div > div:nth-child(2) > div > div:first-child,
-    #timeline > div > div:nth-child(2) > div > div:last-child { margin:0 !important; border-left:3px solid var(--gold) !important; border-right:none !important; border-radius:12px 0 0 12px !important; }
+    #timeline > div > div:nth-child(2) > div > div:last-child { margin:0 !important; border-left:3px solid var(--gold) !important; border-right:none !important; border-radius:12px 0 0 12px !important;  }
   }
   /* Extra small phones */
   @media (max-width: 400px) {
@@ -1660,285 +1660,6 @@ border-radius:16px;
     nav { padding: 0.8rem 1rem; }
     .section-title { font-size: 2.2rem; }
   }
-
-  /* ─── LIGHT MODE ─── */
-
-  /* Base */
-  body.light {
-    --gold: #b8860b;
-    --red:  #b91c1c;
-    --dark:  #f5f5f0;
-    --dark2: #eaeae4;
-    --dark3: #dededb;
-    --white: #1a1a1a;
-    --gray:  #5a5a5a;
-    background: #f5f5f0;
-    color: #1a1a1a;
-  }
-
-  /* ── Nav ── */
-  body.light nav {
-    background: rgba(245,245,240,0.95);
-    border-bottom: 1px solid rgba(184,134,11,0.2);
-    box-shadow: 0 1px 12px rgba(0,0,0,0.07);
-  }
-  body.light .nav-logo { color: var(--gold); }
-  body.light .nav-logo span { color: #1a1a1a; }
-  body.light .nav-links a { color: #444; }
-  body.light .nav-links a:hover { color: var(--gold); }
-  body.light .nav-menu-btn span { background: #1a1a1a; }
-  body.light .mobile-menu { background: rgba(245,245,240,0.98); backdrop-filter: blur(20px); }
-  body.light .mobile-menu a { color: #1a1a1a; }
-  body.light .mobile-menu a:hover { color: var(--gold); }
-
-  /* ── Hero ── */
-  body.light #hero { background: #f0f0eb; }
-  body.light .hero-bg {
-    background:
-      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(184,134,11,0.08) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 30% 80%, rgba(185,28,28,0.05) 0%, transparent 60%),
-      linear-gradient(135deg, #efefea 0%, #f5f5f0 50%, #eeeee9 100%);
-  }
-  body.light .track-lines::before {
-    background: repeating-linear-gradient(to bottom, transparent 0px, transparent 48px,
-      rgba(184,134,11,0.07) 48px, rgba(184,134,11,0.07) 50px);
-  }
-  body.light .hero-flag span { color: #666; }
-  body.light .hero-subtitle { color: var(--gold); }
-  body.light .hero-name { color: #1a1a1a; }
-  body.light .hero-name .line2 { color: var(--red); }
-  body.light .hero-name .accent { color: var(--gold); }
-  body.light .hero-tagline { color: rgba(26,26,26,0.6); }
-  body.light .btn-primary { background: var(--gold); color: #fff; box-shadow: 0 4px 16px rgba(184,134,11,0.25); }
-  body.light .btn-primary:hover { box-shadow: 0 8px 24px rgba(184,134,11,0.35); }
-  body.light .btn-outline { border-color: rgba(26,26,26,0.25); color: #1a1a1a; }
-  body.light .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-  body.light .record-badge { background: var(--red); }
-  body.light .record-time { color: var(--gold); text-shadow: 0 0 30px rgba(184,134,11,0.15); }
-  body.light .record-label { color: #666; }
-  body.light .record-unit { color: rgba(184,134,11,0.75); }
-  body.light .record-event { color: #666; }
-  body.light .deco-star { color: var(--gold); }
-  body.light .deco-line { background: linear-gradient(to right, transparent, rgba(184,134,11,0.35)); }
-  body.light .ticker-wrap { background: var(--gold); }
-  body.light .ticker-item { color: #fff; }
-  body.light .ticker-item::after { color: rgba(255,255,255,0.6); }
-
-  /* ── Section labels ── */
-  body.light .section-label { color: var(--gold); }
-  body.light .section-label::before { background: var(--gold); }
-  body.light .title-accent { color: var(--gold); }
-
-  /* ── Stats bar ── */
-  body.light #stats { background: var(--gold); }
-  body.light .stat-number { color: #fff; }
-  body.light .stat-label  { color: rgba(255,255,255,0.75); }
-  body.light .stat-divider { background: rgba(255,255,255,0.25); }
-
-  /* ── About ── */
-  body.light #about { background: #eaeae4; }
-  body.light .about-card { background: #fff; border-color: rgba(184,134,11,0.12); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-  body.light .about-card::after { background: linear-gradient(to bottom, var(--gold), var(--red)); }
-  body.light .about-card-title { color: var(--gold); }
-  body.light .about-card-text { color: #1a1a1a; }
-  body.light .about-number { color: rgba(184,134,11,0.08); }
-  body.light .about-text p { color: rgba(26,26,26,0.65); }
-  body.light .about-highlight { color: #1a1a1a; font-weight: 600; }
-  body.light .about-school { background: rgba(184,134,11,0.08); border-color: rgba(184,134,11,0.2); color: var(--gold); }
-
-  /* ── Achievements ── */
-  body.light #achievements { background: #f5f5f0; }
-  body.light .achievement-item { background: #fff; border-left-color: transparent; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
-  body.light .achievement-item:hover { background: rgba(184,134,11,0.03); border-left-color: var(--gold); }
-  body.light .achievement-item.gold-item { border-left-color: var(--gold); background: rgba(184,134,11,0.03); }
-  body.light .achievement-year { color: #888; }
-  body.light .achievement-title { color: #1a1a1a; }
-  body.light .achievement-event { color: #666; }
-  body.light .achievement-time { color: var(--gold); }
-  body.light .achievements-list [style*="background:rgba(96,165,250,0.05)"]  { background: rgba(59,130,246,0.06) !important; }
-  body.light .achievements-list [style*="background:rgba(74,222,128,0.04)"]  { background: rgba(34,197,94,0.06) !important; }
-  body.light .achievements-list [style*="background:rgba(249,115,22,0.04)"]  { background: rgba(249,115,22,0.06) !important; }
-
-  /* ── Technique ── */
-  body.light #technique { background: #eaeae4; }
-  body.light .technique-card { background: #fff; border-color: rgba(0,0,0,0.07); box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
-  body.light .technique-card:hover { border-color: rgba(184,134,11,0.3); transform: translateY(-4px); }
-  body.light .technique-card-title { color: var(--gold); }
-  body.light .technique-card-text { color: rgba(26,26,26,0.6); }
-  body.light .technique-number { color: rgba(0,0,0,0.04); }
-
-  /* ── Tracker / Race ── */
-  body.light #tracker { background: #f5f5f0; }
-  body.light .track-visual { background: #fff; border-color: rgba(0,0,0,0.08); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-  body.light .hurdle-track {
-    background: repeating-linear-gradient(to right, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 10%);
-    border-top-color: rgba(0,0,0,0.1); border-bottom-color: rgba(0,0,0,0.1);
-  }
-  body.light .segment-labels { color: #777; }
-  body.light .split-table th { color: #666; border-bottom-color: rgba(0,0,0,0.1); }
-  body.light .split-table td { color: rgba(26,26,26,0.8); border-bottom-color: rgba(0,0,0,0.06); }
-  body.light .split-table tr:hover td { background: rgba(184,134,11,0.03); }
-  body.light .split-table td.highlight { color: var(--gold); }
-
-  /* ── Gallery ── */
-  body.light #gallery { background: #eaeae4; }
-  body.light .gallery-card { background: #dededb; }
-  body.light .gallery-caption { color: rgba(26,26,26,0.8); background: rgba(255,255,255,0.85); }
-  body.light .gallery-zoom { background: rgba(255,255,255,0.9); border-color: rgba(184,134,11,0.4); color: var(--gold); }
-
-  /* ── Training ── */
-  body.light #training { background: #f5f5f0; }
-  body.light .training-day { background: #fff; border-color: rgba(0,0,0,0.07); box-shadow: 0 1px 6px rgba(0,0,0,0.04); }
-  body.light .training-day:hover { border-color: rgba(184,134,11,0.3); }
-  body.light .training-day.active { border-color: var(--gold); background: rgba(184,134,11,0.04); }
-  body.light .day-name { color: #777; }
-  body.light .day-focus { color: var(--gold); }
-  body.light .day-detail { color: rgba(26,26,26,0.45); }
-
-  /* ── Progress bars ── */
-  body.light #progress { background: #eaeae4; }
-  body.light #progress [style*="background:rgba(255,255,255,0.06)"] { background: rgba(0,0,0,0.09) !important; }
-  body.light #progress [style*="color:rgba(245,245,240"] { color: #1a1a1a !important; }
-
-  /* ── Countdown ── */
-  body.light #countdown { background: #f5f5f0; }
-  body.light #countdown [style*="background:var(--dark3)"] { background: #fff !important; border-color: rgba(184,134,11,0.15) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important; }
-  body.light #countdown [style*="color:var(--gray)"] { color: #666 !important; }
-  body.light #countdown [style*="background:rgba(255,209,0,0.08)"] { background: rgba(184,134,11,0.07) !important; border-color: rgba(184,134,11,0.18) !important; }
-
-  /* ── Comparison table ── */
-  body.light #comparison { background: #eaeae4; }
-  body.light #comparison table { background: transparent; }
-  body.light #comparison th { color: var(--gold) !important; border-bottom-color: rgba(184,134,11,0.3) !important; }
-  body.light #comparison td { color: #222 !important; border-bottom-color: rgba(0,0,0,0.07) !important; }
-  body.light #comparison tr { background: #fff !important; }
-  body.light #comparison tr[style*="background:rgba(255,209,0,0.05)"] { background: rgba(184,134,11,0.06) !important; }
-  body.light #comparison td[style*="color:rgba(245,245,240,0.55)"],
-  body.light #comparison td[style*="color:rgba(245,245,240,0.35)"] { color: #777 !important; }
-  body.light #comparison td[style*="color:var(--gold)"] { color: var(--gold) !important; }
-
-  /* ── Quote ── */
-  body.light #quote { background: var(--red); color: #fff; }
-  body.light .quote-text { color: #fff; }
-  body.light .quote-attr { color: rgba(255,255,255,0.75); }
-
-  /* ── Testimonials ── */
-  body.light #testimonials { background: #f5f5f0; }
-  body.light .tcard { background: #fff; border-color: rgba(0,0,0,0.07); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-  body.light .tcard-quote { opacity: 0.3; }
-  body.light .tcard-text { color: rgba(26,26,26,0.65); }
-  body.light .tcard-name { color: #1a1a1a; }
-  body.light .tcard-role { color: #777; }
-  body.light .student-strip { gap: 1.5rem; }
-  body.light .student-photo { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-  body.light .student-text { background: #fff; border-color: rgba(184,134,11,0.15); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-  body.light .student-headline { color: #1a1a1a; }
-  body.light .student-body { color: rgba(26,26,26,0.6); }
-
-  /* ── News cards ── */
-  body.light #news { background: #eaeae4; }
-  body.light .news-card { background: #fff; border-color: rgba(0,0,0,0.07); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-  body.light .news-card:hover { border-color: rgba(184,134,11,0.25); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
-  body.light .news-card__title { color: #1a1a1a; }
-  body.light .news-card__text { color: rgba(26,26,26,0.6); }
-  body.light .news-more-card { background: #fff; border-color: rgba(0,0,0,0.07); }
-  body.light .news-more-card-title { color: #1a1a1a; }
-  body.light .news-more-card-text { color: rgba(26,26,26,0.6); }
-
-  /* ── View more buttons ── */
-  body.light .view-more-btn { background: var(--gold); color: #fff; border-color: var(--gold); }
-  body.light .view-more-btn:hover { background: #a37700; box-shadow: 0 6px 20px rgba(184,134,11,0.3); }
-
-  /* ── Football ── */
-  body.light #football { background: #eaeae4; }
-  body.light #football [style*="background:var(--dark3)"] { background: #fff !important; border-color: rgba(0,0,0,0.08) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.04) !important; }
-  body.light #football [style*="color:rgba(245,245,240,0.5)"] { color: rgba(26,26,26,0.6) !important; }
-  body.light #football [style*="color:var(--gray)"] { color: #666 !important; }
-  body.light #football [style*="color:rgba(245,245,240,0.55)"] { color: rgba(26,26,26,0.6) !important; }
-  body.light #football img { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-
-  /* ── Timeline ── */
-  body.light #timeline { background: #f5f5f0; }
-  body.light #timeline [style*="background:var(--dark3)"] { background: #fff !important; border-color: rgba(0,0,0,0.09) !important; box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important; }
-  body.light #timeline [style*="color:rgba(245,245,240,0.5)"] { color: rgba(26,26,26,0.6) !important; }
-  body.light #timeline [style*="color:rgba(245,245,240,0.45)"] { color: rgba(26,26,26,0.55) !important; }
-  body.light #timeline [style*="writing-mode:vertical-rl"] { color: rgba(26,26,26,0.08) !important; }
-  body.light #timeline [style*="background:linear-gradient(135deg,#0a1628"] { background: #e8f0ff !important; border-color: rgba(96,165,250,0.25) !important; box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important; }
-  body.light #timeline [style*="width:2px"] { background: rgba(184,134,11,0.2) !important; }
-  body.light #timeline [style*="background:linear-gradient(to bottom,transparent,rgba(255,209,0"] { background: linear-gradient(to bottom, transparent, rgba(184,134,11,0.25), transparent) !important; }
-
-  /* ── Contact ── */
-  body.light #contact { background: #eaeae4; }
-  body.light .contact-desc { color: rgba(26,26,26,0.6); }
-  body.light .contact-link { background: #fff; border-color: rgba(0,0,0,0.09); color: #1a1a1a; box-shadow: 0 1px 6px rgba(0,0,0,0.04); }
-  body.light .contact-link:hover { border-color: var(--gold); background: rgba(184,134,11,0.03); }
-  body.light .contact-link-icon { color: var(--gold); }
-  body.light .contact-link-type { color: var(--gold); }
-  body.light .contact-link-value { color: #555; }
-  body.light .form-label { color: #666; }
-  body.light .form-input, body.light .form-textarea, body.light .form-select { background: #fff; color: #1a1a1a; border-color: rgba(0,0,0,0.13); box-shadow: inset 0 1px 4px rgba(0,0,0,0.04); }
-  body.light .form-input:focus, body.light .form-textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,134,11,0.12); }
-  body.light .form-select option { background: #fff; color: #1a1a1a; }
-
-  /* ── Footer ── */
-  body.light footer { background: #e4e4de; border-top-color: rgba(0,0,0,0.09); }
-  body.light .footer-logo { color: var(--gold); }
-  body.light .footer-copy { color: #777; }
-  body.light .footer-social { border-color: rgba(0,0,0,0.12); color: #666; }
-  body.light .footer-social:hover { border-color: var(--gold); color: var(--gold); }
-
-  /* ── Back to top ── */
-  body.light #backToTop, body.light #btt { background: var(--gold); color: #fff; }
-
-  /* ── Sponsors ── */
-  body.light #sponsors { background: #f5f5f0; border-top-color: rgba(0,0,0,0.07); }
-  body.light #sponsors [style*="background:var(--dark3)"] { background: #fff !important; border-color: rgba(0,0,0,0.08) !important; }
-
-  /* ── Scrollbar ── */
-  body.light ::-webkit-scrollbar-track { background: #f5f5f0; }
-  body.light ::-webkit-scrollbar-thumb { background: var(--gold); }
-
-  /* ─── TOGGLE BUTTON ─── */
-  .theme-toggle {
-    width: 44px; height: 24px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,209,0,0.3);
-    border-radius: 12px;
-    cursor: pointer;
-    position: relative;
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    padding: 0 3px;
-    transition: background 0.3s, border-color 0.3s;
-  }
-  .theme-toggle-icon {
-    position: absolute;
-    font-size: 0.6rem;
-    line-height: 1;
-    pointer-events: none;
-    transition: opacity 0.3s;
-  }
-  .theme-toggle-icon.sun { left: 5px; opacity: 1; }
-  .theme-toggle-icon.moon { right: 5px; opacity: 0.5; }
-  .theme-toggle-knob {
-    width: 18px; height: 18px;
-    border-radius: 50%;
-    background: var(--gold);
-    position: absolute;
-    left: 3px;
-    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
-  }
-  body.light .theme-toggle { background: rgba(0,0,0,0.07); border-color: rgba(180,140,0,0.35); }
-  body.light .theme-toggle-knob { transform: translateX(20px); }
-  /* Dark mode: moon is active (right), sun dim */
-  .theme-toggle-icon.sun { left: 5px; opacity: 0.4; }
-  .theme-toggle-icon.moon { right: 5px; opacity: 1; }
-  /* Light mode: sun is active (left), moon dim */
-  body.light .theme-toggle-icon.sun { opacity: 1; }
-  body.light .theme-toggle-icon.moon { opacity: 0.4; }
-
 </style>
 </head>
 <body>
@@ -1957,15 +1678,8 @@ border-radius:16px;
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div style="display:flex;align-items:center;gap:0.8rem;">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
-      <span class="theme-toggle-icon sun">☀️</span>
-      <span class="theme-toggle-icon moon">🌙</span>
-      <span class="theme-toggle-knob"></span>
-    </button>
-    <div class="nav-menu-btn" id="menuBtn">
-      <span></span><span></span><span></span>
-    </div>
+  <div class="nav-menu-btn" id="menuBtn">
+    <span></span><span></span><span></span>
   </div>
 </nav>
 <!-- Mobile Menu -->
@@ -2765,7 +2479,7 @@ border-radius:16px;
 
       <!-- 2023 JHS -->
       <div class="fade-in" style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:start;">
-        <div style="background:var(--dark3);border:1px solid rgba(255,255,255,0.06);padding:1.4rem 1.8rem;margin-right:1.5rem;border-right:3px solid var(--gold);border-radius:0 12px 12px 0;">
+        <div style="background:var(--dark3);border:1px solid rgba(255,255,255,0.06);padding:1.4rem 1.8rem;margin-right:1.5rem;border-right:3px solid var(--gold);border-radius:0 16px 16px 0;">
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;">2023 · JHS</div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.5px;margin-bottom:0.4rem;">🏅 UBaSSA Best JHS Boys Football Player</div>
           <div style="font-size:0.82rem;color:rgba(245,245,240,0.5);line-height:1.6;">UG@75 Games — KNUST · Nominated Best Football Player among all JHS Boys teams</div>
@@ -2786,7 +2500,7 @@ border-radius:16px;
           <div style="width:16px;height:16px;border-radius:50%;background:var(--white);border:3px solid var(--dark);box-shadow:0 0 0 3px rgba(245,245,240,0.5);"></div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:rgba(245,245,240,0.1);margin-top:0.5rem;writing-mode:vertical-rl;">2024</div>
         </div>
-        <div style="background:var(--dark3);border:1px solid rgba(255,255,255,0.06);padding:1.4rem 1.8rem;margin-left:1.5rem;border-left:3px solid rgba(245,245,240,0.3);border-radius:12px 0 0 12px;">
+        <div style="background:var(--dark3);border:1px solid rgba(255,255,255,0.06);padding:1.4rem 1.8rem;margin-left:1.5rem;border-left:3px solid rgba(245,245,240,0.3);border-radius:16px 0 0 16px;">
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-bottom:0.4rem;">2024 · SHS Form 1</div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.5px;margin-bottom:0.4rem;">🥇 800m · 🥈 400mH · 🥉 400m</div>
           <div style="font-size:0.82rem;color:rgba(245,245,240,0.5);line-height:1.6;">Dominant debut SHS season — won 800m, placed 2nd in 400m Hurdles, 3rd in 400m at Ashanti Regional Championships</div>
@@ -2797,7 +2511,7 @@ border-radius:16px;
 
       <!-- 2025 SHS F2 -->
       <div class="fade-in" style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:start;">
-        <div style="background:var(--dark3);border:1px solid rgba(255,255,255,0.06);padding:1.4rem 1.8rem;margin-right:1.5rem;border-right:3px solid var(--gold);border-radius:0 12px 12px 0;">
+        <div style="background:var(--dark3);border:1px solid rgba(255,255,255,0.06);padding:1.4rem 1.8rem;margin-right:1.5rem;border-right:3px solid var(--gold);border-radius:0 16px 16px 0;">
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;">2025 · SHS Form 2</div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.5px;margin-bottom:0.4rem;">🏆 Overall Best Male Athlete ×2 · 🥇 800m · 🥈 400m · 🥇 400m Hurdles</div>
           <div style="font-size:0.82rem;color:rgba(245,245,240,0.5);line-height:1.6;">Won Overall Best Male Athlete award twice. Dominated across multiple events. Regional 800m champion — later equalised the 800m regional record.</div>
@@ -2818,7 +2532,7 @@ border-radius:16px;
           <div style="width:20px;height:20px;border-radius:50%;background:var(--red);border:3px solid var(--dark);box-shadow:0 0 0 4px rgba(232,0,29,0.4);"></div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:rgba(232,0,29,0.2);margin-top:0.5rem;writing-mode:vertical-rl;">2026</div>
         </div>
-        <div style="background:var(--dark3);border:1px solid rgba(232,0,29,0.2);padding:1.4rem 1.8rem;margin-left:1.5rem;border-left:3px solid var(--red);border-radius:12px 0 0 12px;position:relative;">
+        <div style="background:var(--dark3);border:1px solid rgba(232,0,29,0.2);padding:1.4rem 1.8rem;margin-left:1.5rem;border-left:3px solid var(--red);position:relative;border-radius:16px 0 0 16px;">
           <div style="position:absolute;top:0.6rem;right:0.6rem;background:var(--red);padding:0.2rem 0.6rem;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff; border-radius:8px;">⚡ RECORD</div>
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:0.4rem;">2026 · SHS Form 3</div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.5px;margin-bottom:0.4rem;">🥇 800m · Equalized 800m Record · 🔥 Broke 400mH Record — 51.69s</div>
@@ -2830,7 +2544,7 @@ border-radius:16px;
 
       <!-- 2026 National Record + World Qualifier -->
       <div class="fade-in" style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:start;">
-        <div style="background:var(--dark3);border:1px solid rgba(255,209,0,0.25);padding:1.4rem 1.8rem;margin-right:1.5rem;border-right:3px solid var(--gold);border-radius:0 12px 12px 0;position:relative;">
+        <div style="background:var(--dark3);border:1px solid rgba(255,209,0,0.25);padding:1.4rem 1.8rem;margin-right:1.5rem;border-right:3px solid var(--gold);position:relative;border-radius:0 16px 16px 0;">
           <div style="position:absolute;top:0.6rem;right:0.6rem;background:var(--gold);padding:0.2rem 0.6rem;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dark); border-radius:8px;">⚡ RECORD</div>
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;">2026 · Cape Coast National Open</div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.5px;margin-bottom:0.4rem;">🥇 National U20 Record — 52.34s · World U20 Qualified</div>
@@ -2850,7 +2564,7 @@ border-radius:16px;
         <div style="display:flex;flex-direction:column;align-items:center;padding-top:1.4rem;">
           <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#60a5fa,#3b82f6);border:4px solid var(--dark);box-shadow:0 0 0 5px rgba(96,165,250,0.4),0 0 20px rgba(96,165,250,0.3);animation:pulse 2s infinite;"></div>
         </div>
-        <div style="background:linear-gradient(135deg,#0a1628,#0d1e38);border:1px solid rgba(96,165,250,0.25);padding:1.4rem 1.8rem;margin-left:1.5rem;border-left:3px solid #60a5fa;border-radius:12px 0 0 12px;">
+        <div style="background:linear-gradient(135deg,#0a1628,#0d1e38);border:1px solid rgba(96,165,250,0.25);padding:1.4rem 1.8rem;margin-left:1.5rem;border-left:3px solid #60a5fa;border-radius:16px 0 0 16px;">
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:0.4rem;">August 2026 · Eugene, Oregon USA</div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.5px;margin-bottom:0.4rem;">🌍 World U20 Athletics Championships</div>
           <div style="font-size:0.82rem;color:rgba(245,245,240,0.5);line-height:1.6;">The world stage awaits. Ghana's brightest athletics prospect takes on the best U20 hurdlers on the planet.</div>
@@ -3412,7 +3126,7 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
           <span class="contact-link-icon">📧</span>
           <div class="contact-link-info">
             <div class="contact-link-type">Email</div>
-            <div class="contact-link-value">bossman.kusiappiah@athletics.gh</div>
+            <div class="contact-link-value">bossmanappiah123@icloud.com</div>
           </div>
         </a>
         <a href="#" class="contact-link">
@@ -3528,21 +3242,6 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
 " title="Back to top">↑</button>
 
 <script>
-
-  // ── Dark / Light Mode Toggle ──
-  (function initTheme() {
-    const saved = localStorage.getItem('bka-theme');
-    if (saved === 'light') document.body.classList.add('light');
-    const btn = document.getElementById('themeToggle');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      document.body.classList.toggle('light');
-      localStorage.setItem('bka-theme',
-        document.body.classList.contains('light') ? 'light' : 'dark'
-      );
-    });
-  })();
-
   // ── Scroll fade-in ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -3623,61 +3322,10 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
   // ── Contact form submit ──
   const formBtn = document.querySelector('#contact .btn-primary');
   if (formBtn) {
-    formBtn.addEventListener('click', async () => {
-      const nameEl  = document.querySelector('#contact input[type="text"].form-input');
-      const emailEl = document.querySelector('#contact input[type="email"].form-input');
-      const typeEl  = document.querySelector('#contact .form-select');
-      const msgEl   = document.querySelector('#contact .form-textarea');
-
-      const name    = nameEl  ? nameEl.value.trim()  : '';
-      const email   = emailEl ? emailEl.value.trim() : '';
-      const type    = typeEl  ? typeEl.value          : '';
-      const message = msgEl   ? msgEl.value.trim()   : '';
-
-      // Validation
-      if (!name || !email || !message) {
-        formBtn.textContent = '⚠ Please fill all fields';
-        formBtn.style.background = '#555';
-        setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 3000);
-        return;
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        formBtn.textContent = '⚠ Invalid email address';
-        formBtn.style.background = '#b91c1c';
-        setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 3000);
-        return;
-      }
-
-      // Submit to Formspree
-      formBtn.textContent = 'Sending...';
-      formBtn.disabled = true;
-      formBtn.style.background = '#555';
-
-      try {
-        const res = await fetch('https://formspree.io/f/mbdbgwjk', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ name, email, inquiry_type: type, message }),
-        });
-
-        if (res.ok) {
-          formBtn.textContent = '✓ Message Sent!';
-          formBtn.style.background = '#006B3F';
-          if (nameEl)  nameEl.value  = '';
-          if (emailEl) emailEl.value = '';
-          if (msgEl)   msgEl.value   = '';
-          if (typeEl)  typeEl.selectedIndex = 0;
-        } else {
-          formBtn.textContent = '✗ Failed — try again';
-          formBtn.style.background = '#b91c1c';
-        }
-      } catch (err) {
-        formBtn.textContent = '✗ Network error — try again';
-        formBtn.style.background = '#b91c1c';
-      }
-
-      formBtn.disabled = false;
-      setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 4000);
+    formBtn.addEventListener('click', () => {
+      formBtn.textContent = '\u2713 Message Sent!';
+      formBtn.style.background = '#006B3F';
+      setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 3000);
     });
   }
 
