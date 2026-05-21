@@ -3322,10 +3322,61 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
   // ── Contact form submit ──
   const formBtn = document.querySelector('#contact .btn-primary');
   if (formBtn) {
-    formBtn.addEventListener('click', () => {
-      formBtn.textContent = '\u2713 Message Sent!';
-      formBtn.style.background = '#006B3F';
-      setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 3000);
+    formBtn.addEventListener('click', async () => {
+      const nameEl  = document.querySelector('#contact input[type="text"].form-input');
+      const emailEl = document.querySelector('#contact input[type="email"].form-input');
+      const typeEl  = document.querySelector('#contact .form-select');
+      const msgEl   = document.querySelector('#contact .form-textarea');
+
+      const name    = nameEl  ? nameEl.value.trim()  : '';
+      const email   = emailEl ? emailEl.value.trim() : '';
+      const type    = typeEl  ? typeEl.value          : '';
+      const message = msgEl   ? msgEl.value.trim()   : '';
+
+      // Validation
+      if (!name || !email || !message) {
+        formBtn.textContent = '⚠ Please fill all fields';
+        formBtn.style.background = '#555';
+        setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 3000);
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        formBtn.textContent = '⚠ Invalid email address';
+        formBtn.style.background = '#b91c1c';
+        setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 3000);
+        return;
+      }
+
+      // Submit to Formspree
+      formBtn.textContent = 'Sending...';
+      formBtn.disabled = true;
+      formBtn.style.background = '#555';
+
+      try {
+        const res = await fetch('https://formspree.io/f/mbdbgwjk', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name, email, inquiry_type: type, message }),
+        });
+
+        if (res.ok) {
+          formBtn.textContent = '✓ Message Sent!';
+          formBtn.style.background = '#006B3F';
+          if (nameEl)  nameEl.value  = '';
+          if (emailEl) emailEl.value = '';
+          if (msgEl)   msgEl.value   = '';
+          if (typeEl)  typeEl.selectedIndex = 0;
+        } else {
+          formBtn.textContent = '✗ Failed — try again';
+          formBtn.style.background = '#b91c1c';
+        }
+      } catch (err) {
+        formBtn.textContent = '✗ Network error — try again';
+        formBtn.style.background = '#b91c1c';
+      }
+
+      formBtn.disabled = false;
+      setTimeout(() => { formBtn.textContent = 'Send Message'; formBtn.style.background = ''; }, 4000);
     });
   }
 
@@ -3470,6 +3521,17 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
   let touchStartX = 0;
   const lbEl = document.getElementById('lightbox');
   lbEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  lbEl.addEventListener('touchend',   e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) shiftLightbox(diff > 0 ? 1 : -1);
+  });
+
+  // Image fade transition
+  document.getElementById('lb-img').style.transition = 'opacity 0.15s';
+</script>
+</body>
+</html>
+hes[0].clientX; }, { passive: true });
   lbEl.addEventListener('touchend',   e => {
     const diff = touchStartX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) shiftLightbox(diff > 0 ? 1 : -1);
