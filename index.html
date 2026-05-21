@@ -3624,8 +3624,8 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
   const formBtn = document.querySelector('#contact .btn-primary');
   if (formBtn) {
     formBtn.addEventListener('click', async () => {
-      const nameEl  = document.querySelector('#contact .form-input[placeholder*="Name"], #contact .form-input[placeholder*="name"]');
-      const emailEl = document.querySelector('#contact .form-input[type="email"]');
+      const nameEl  = document.querySelector('#contact input[type="text"].form-input');
+      const emailEl = document.querySelector('#contact input[type="email"].form-input');
       const typeEl  = document.querySelector('#contact .form-select');
       const msgEl   = document.querySelector('#contact .form-textarea');
 
@@ -3654,7 +3654,7 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
       formBtn.style.background = '#555';
 
       try {
-        const res = await fetch('https://formspree.io/f/mredpayy', {
+        const res = await fetch('https://formspree.io/f/mbdbgwjk', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({ name, email, inquiry_type: type, message }),
