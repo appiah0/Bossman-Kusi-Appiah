@@ -77,7 +77,7 @@
   }
   .fact-card{
     background:var(--dark3);border:1px solid rgba(255,255,255,0.06);
-    padding:1.5rem 1.2rem;text-align:center;border-radius:8px;
+    padding:1.5rem 1.2rem;text-align:center;border-radius:16px;
   }
   .fact-value{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);line-height:1;margin-bottom:0.3rem;}
   .fact-label{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
@@ -98,7 +98,7 @@
     letter-spacing:2px;text-transform:uppercase;
     padding:0.5rem 1.2rem;
     background:rgba(255,209,0,0.1);border:1px solid rgba(255,209,0,0.3);
-    color:var(--gold);cursor:pointer;border-radius:4px;
+    color:var(--gold);cursor:pointer;border-radius:8px;
     transition:background 0.2s;margin-top:0.75rem;
   }
   .copy-btn:hover{background:rgba(255,209,0,0.2);}
@@ -129,7 +129,7 @@
   /* PHOTO SLIDER */
   .photo-slider-wrap {
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 16px;
     padding: 0 2px;
   }
   .photo-slider {
@@ -150,7 +150,7 @@
     background: rgba(10,10,10,0.8); border: 1px solid rgba(255,209,0,0.3);
     color: var(--gold); font-size: 1.8rem; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
-    transition: background 0.2s; border-radius: 4px;
+    transition: background 0.2s; border-radius: 8px;
   }
   .slider-arrow:hover { background: rgba(255,209,0,0.15); }
   .slider-prev { left: -18px; }
@@ -183,7 +183,7 @@
   .media-thumb {
     width: 90px; height: 70px;
     object-fit: cover; object-position: center;
-    border-radius: 4px; flex-shrink: 0;
+    border-radius: 8px; flex-shrink: 0;
   }
   .media-date {
     font-family: 'Barlow Condensed', sans-serif;
@@ -193,7 +193,7 @@
 
   /* PHOTO DOWNLOAD GRID */
   .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
-  .photo-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden;}
+  .photo-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;}
   .photo-card img{width:100%;height:200px;object-fit:cover;object-position:top;display:block;transition:transform 0.3s;}
   .photo-card:hover img{transform:scale(1.04);}
   .photo-card-body{padding:1rem;}
@@ -205,7 +205,7 @@
     letter-spacing:2px;text-transform:uppercase;
     padding:0.45rem 1rem;
     background:rgba(255,209,0,0.1);border:1px solid rgba(255,209,0,0.3);
-    color:var(--gold);text-decoration:none;border-radius:4px;
+    color:var(--gold);text-decoration:none;border-radius:8px;
     transition:background 0.2s;
   }
   .dl-btn:hover{background:rgba(255,209,0,0.2);}
@@ -214,7 +214,7 @@
   .media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem;}
   .media-card{
     background:var(--dark3);border:1px solid rgba(255,255,255,0.06);
-    padding:1.2rem 1.5rem;border-radius:8px;
+    padding:1.2rem 1.5rem;border-radius:16px;
     display:flex;gap:1rem;align-items:flex-start;
     transition:border-color 0.2s;
   }
@@ -229,7 +229,7 @@
   .press-contact{
     background:linear-gradient(135deg,rgba(255,209,0,0.07),rgba(232,0,29,0.04));
     border:1px solid rgba(255,209,0,0.15);
-    border-radius:12px;padding:2.5rem;
+    border-radius:16px;padding:2.5rem;
     display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;
     margin-top:1rem;
   }
@@ -239,7 +239,7 @@
   .press-contact-link{
     display:flex;align-items:center;gap:0.75rem;
     padding:0.9rem 1.2rem;background:var(--dark3);
-    border:1px solid rgba(255,255,255,0.07);border-radius:8px;
+    border:1px solid rgba(255,255,255,0.07);border-radius:16px;
     text-decoration:none;color:var(--white);
     transition:border-color 0.2s,background 0.2s;
   }
@@ -251,7 +251,7 @@
   .cv-banner{
     background:var(--gold);padding:2rem 2.5rem;
     display:flex;align-items:center;justify-content:space-between;
-    gap:1.5rem;border-radius:8px;flex-wrap:wrap;
+    gap:1.5rem;border-radius:16px;flex-wrap:wrap;
     margin-top:1rem;
   }
   .cv-banner-text{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:1px;color:var(--dark);}
@@ -261,7 +261,7 @@
     background:var(--dark);color:var(--gold);
     padding:0.85rem 2rem;text-decoration:none;
     font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-    border-radius:6px;transition:background 0.2s;white-space:nowrap;
+    border-radius:16px;transition:background 0.2s;white-space:nowrap;
   }
   .cv-dl-btn:hover{background:#1a1a1a;}
 
@@ -439,7 +439,7 @@
       <h2 class="section-title" style="margin-bottom:0;">Official <span class="title-accent">Photos</span></h2>
       <a href="gallery.html" class="dl-btn" style="text-decoration:none;">View Full Gallery →</a>
     </div>
-    <p style="color:rgba(245,245,240,0.5);margin-bottom:1.5rem;font-size:0.9rem;line-height:1.6;">Swipe or use arrows to browse · All photos approved for editorial use with attribution: <strong style="color:var(--white);">"Photo: Bossman Kusi Appiah / Prempeh College"</strong></p>
+    <p style="color:rgba(245,245,240,0.5);margin-bottom:1.5rem;font-size:0.9rem;line-height:1.6;">Swipe or use arrows to browse · All photos approved for editorial use with attribution: <strong style="color:var(--white);">"Photo: Bossman Kusi Appiah / Ghana Athletics / Prempeh College"</strong></p>
 
     <!-- Slider wrapper -->
     <div style="position:relative;">
@@ -469,6 +469,15 @@
             </div>
           </div>
 
+       <div class="photo-card slider-item">
+            <img src="images/cape-coast.jpg" alt="Bossman Kusi Appiah beside 52.34s scoreboard"/>
+            <div class="photo-card-body">
+              <div class="photo-card-name">52.34s U20 National Record — Ghana U20 Athletics 2026</div>
+              <div class="photo-card-size">Landscape · High Resolution</div>
+              <a href="images/cape-coast.jpg" download class="dl-btn">⬇ Download</a>
+            </div>
+          </div>
+
           <div class="photo-card slider-item">
             <img src="images/podium-raise.jpg" alt="Bossman Kusi Appiah raising trophy on podium"/>
             <div class="photo-card-body">
@@ -488,20 +497,20 @@
           </div>
 
           <div class="photo-card slider-item">
-            <img src="images/wha-best-athlete-red.jpg" alt="Bossman Kusi Appiah Overall Best Male Athlete 2025"/>
+            <img src="images/natl-team-yellow.jpg" alt="Bossman Kusi Appiah Overall Best Male Athlete 2025"/>
             <div class="photo-card-body">
               <div class="photo-card-name">Overall Best Male Athlete — 2025 Super Zonals</div>
               <div class="photo-card-size">Landscape · High Resolution</div>
-              <a href="images/wha-best-athlete-red.jpg" download class="dl-btn">⬇ Download</a>
+              <a href="images/natl-team-yellow.jpg" download class="dl-btn">⬇ Download</a>
             </div>
           </div>
 
           <div class="photo-card slider-item">
-            <img src="images/record-poster.jpg" alt="Official Ashanti Region Schools Record Poster"/>
+            <img src="images/trophy-presentation.jpg" alt="Bossman Kusi Appiah receiving trophy"/>
             <div class="photo-card-body">
-              <div class="photo-card-name">Official Record Poster — 400mH</div>
-              <div class="photo-card-size">Portrait · Official Graphic</div>
-              <a href="images/record-poster.jpg" download class="dl-btn">⬇ Download</a>
+              <div class="photo-card-name">Receiving Trophy</div>
+              <div class="photo-card-size">Trophy Presentation</div>
+              <a href="images/trophy-presentation.jpg" download class="dl-btn">⬇ Download</a>
             </div>
           </div>
 
@@ -541,13 +550,21 @@
     <div id="allPhotosGrid" style="display:none;margin-top:1.5rem;">
       <div class="photo-grid" style="grid-template-columns:repeat(3,1fr);">
         <div class="photo-card"><img src="images/fist-trophy.jpg" alt="Champion fist"/><div class="photo-card-body"><div class="photo-card-name">Champion Fist 2026</div><a href="images/fist-trophy.jpg" download class="dl-btn">⬇ Download</a></div></div>
-        <div class="photo-card"><img src="images/record-5169.jpg" alt="51.69s record"/><div class="photo-card-body"><div class="photo-card-name">51.69s Regional Record</div><a href="images/record-5169.jpg" download class="dl-btn">⬇ Download</a></div></div>
+        
+        <div class="photo-card"><img src="images/record-5169.jpg" alt="52.34s record"/><div class="photo-card-body"><div class="photo-card-name">52.34s U20 National Record</div><a href="images/cape-coast.jpg" download class="dl-btn">⬇ Download</a></div></div>
+        
+        <div class="photo-card"><img src="images/cape-coast.jpg" alt="51.69s record"/><div class="photo-card-body"><div class="photo-card-name">51.69s Regional Record</div><a href="images/record-5169.jpg" download class="dl-btn">⬇ Download</a></div></div>
+        
         <div class="photo-card"><img src="images/podium-raise.jpg" alt="Podium raise"/><div class="photo-card-body"><div class="photo-card-name">Podium Trophy Raise</div><a href="images/podium-raise.jpg" download class="dl-btn">⬇ Download</a></div></div>
+        
         <div class="photo-card"><img src="images/wha-prempeh778.jpg" alt="#778 on track"/><div class="photo-card-body"><div class="photo-card-name">#778 PREMPEH On Track</div><a href="images/wha-prempeh778.jpg" download class="dl-btn">⬇ Download</a></div></div>
-        <div class="photo-card"><img src="images/wha-best-athlete-red.jpg" alt="Best Athlete 2025"/><div class="photo-card-body"><div class="photo-card-name">Best Male Athlete 2025</div><a href="images/wha-best-athlete-red.jpg" download class="dl-btn">⬇ Download</a></div></div>
-        <div class="photo-card"><img src="images/record-poster.jpg" alt="Record poster"/><div class="photo-card-body"><div class="photo-card-name">Official Record Poster</div><a href="images/record-poster.jpg" download class="dl-btn">⬇ Download</a></div></div>
+        
+        <div class="photo-card"><img src="images/natl-team-yellow.jpg" alt="Best Athlete 2025"/><div class="photo-card-body"><div class="photo-card-name">Best Male Athlete 2025</div><a href="images/natl-team-yellow.jpg" download class="dl-btn">⬇ Download</a></div></div>
+        
         <div class="photo-card"><img src="images/kissing-trophy.jpg" alt="Kissing trophy"/><div class="photo-card-body"><div class="photo-card-name">Kissing the Trophy</div><a href="images/kissing-trophy.jpg" download class="dl-btn">⬇ Download</a></div></div>
-        <div class="photo-card"><img src="images/podium-crowd.jpg" alt="Podium crowd"/><div class="photo-card-body"><div class="photo-card-name">Podium with Crowd</div><a href="images/podium-crowd.jpg" download class="dl-btn">⬇ Download</a></div></div>
+        
+        <div class="photo-card"><img src="images/trophy-presentation.jpg" alt="Podium crowd"/><div class="photo-card-body"><div class="photo-card-name">Receiving Trophy</div><a href="images/trophy-presentation.jpg" download class="dl-btn">⬇ Download</a></div></div>
+        
         <div class="photo-card"><img src="images/team-celebrate.jpg" alt="Team celebration"/><div class="photo-card-body"><div class="photo-card-name">Team Celebration</div><a href="images/team-celebrate.jpg" download class="dl-btn">⬇ Download</a></div></div>
       </div>
     </div>
@@ -570,7 +587,7 @@
         <div class="cv-banner-text">Full CV / Media Kit — PDF</div>
         <div class="cv-banner-sub">Complete career history, stats, references and contact details</div>
       </div>
-      <a href="Bossman_Kusi_Appiah_CV.pdf" download class="cv-dl-btn">
+      <a href="Bossman Kusi Appiah - CV 11.PDF" download class="cv-dl-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Full CV (PDF)
       </a>
@@ -589,7 +606,7 @@
     <div class="media-grid">
 
       <a href="https://x.com/i/status/2026993884299928017" target="_blank" rel="noopener" class="media-card media-card-link">
-        <img src="images/news-citi-51s-tweet.jpg" alt="Citi Sports Ghana coverage" class="media-thumb"/>
+        <img src="images/CitiSports-Profile.jpg" alt="Citi Sports Ghana coverage" class="media-thumb"/>
         <div>
           <div class="media-source">Citi Sports Ghana</div>
           <div class="media-date">26 Feb 2026</div>
@@ -599,7 +616,7 @@
       </a>
 
       <a href="https://x.com/i/status/2027102748374716421" target="_blank" rel="noopener" class="media-card media-card-link">
-        <img src="images/news-elite-record-tweet.jpg" alt="Elite Schools League coverage" class="media-thumb"/>
+        <img src="images/Elite-Profile.jpg" alt="Elite Schools League coverage" class="media-thumb"/>
         <div>
           <div class="media-source">Elite Schools League</div>
           <div class="media-date">26 Feb 2026</div>
@@ -609,7 +626,7 @@
       </a>
 
       <a href="https://x.com/i/status/1895474856608874958" target="_blank" rel="noopener" class="media-card media-card-link">
-        <img src="images/news-sporty-hurdles-tweet.jpg" alt="Sporty FM Ghana coverage" class="media-thumb"/>
+        <img src="images/SportyFm-Profile.jpg" alt="Sporty FM Ghana coverage" class="media-thumb"/>
         <div>
           <div class="media-source">Sporty FM Ghana</div>
           <div class="media-date">28 Feb 2025</div>
@@ -619,7 +636,7 @@
       </a>
 
       <a href="https://x.com/i/status/2027102748374716421" target="_blank" rel="noopener" class="media-card media-card-link">
-        <img src="images/news-joy-800m-tweet.jpg" alt="Joy Sports GH coverage" class="media-thumb"/>
+        <img src="images/JoySports-Profile.jpg" alt="Joy Sports GH coverage" class="media-thumb"/>
         <div>
           <div class="media-source">Joy Sports GH</div>
           <div class="media-date">28 Feb 2025</div>
@@ -629,7 +646,7 @@
       </a>
 
       <a href="https://www.facebook.com/share/p/1B8s6d994Z/" target="_blank" rel="noopener" class="media-card media-card-link">
-        <img src="images/prempeh-post.jpg" alt="Prempeh College announcement" class="media-thumb"/>
+        <img src="images/PrempehCollege-Profile.jpg" alt="Prempeh College announcement" class="media-thumb"/>
         <div>
           <div class="media-source">Prempeh College</div>
           <div class="media-date">14 Mar 2026</div>
@@ -639,7 +656,7 @@
       </a>
 
       <a href="https://www.facebook.com/share/p/17Q8hR9fi4/" target="_blank" rel="noopener" class="media-card media-card-link">
-        <img src="images/cape-coast.jpg" alt="Ghana Athletics Association coverage" class="media-thumb"/>
+        <img src="images/GhanaAthletics-Profile.jpg" alt="Ghana Athletics Association coverage" class="media-thumb"/>
         <div>
           <div class="media-source">Ghana Athletics Association</div>
           <div class="media-date">14 Mar 2026</div>
@@ -667,7 +684,7 @@
           <span style="font-size:1.2rem;">📧</span>
           <div>
             <div class="press-contact-link-type">Email</div>
-            <div class="press-contact-link-val">appiahbutros18@gmail.com</div>
+            <div class="press-contact-link-val">bossmanappiah123@icloud.com</div>
           </div>
         </a>
         <a href="tel:+233533327517" class="press-contact-link">
