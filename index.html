@@ -1449,6 +1449,52 @@ border-radius:16px;
   .lb-next { right: 1rem; }
   .lb-prev:hover, .lb-next:hover { background: rgba(255,209,0,0.2); border-color: var(--gold); color: var(--gold); }
 
+
+  /* ─── RACE CALENDAR ─── */
+  .race-card {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.4rem 1.8rem;
+    background: var(--dark3);
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+    margin-bottom: 1px;
+  }
+  .race-card[data-status="completed"] { border-left-color: #4ade80; }
+  .race-card[data-status="upcoming"]  { border-left-color: var(--gold); }
+  .race-card[data-status="live"]      { border-left-color: var(--red); }
+  .race-card:hover { background: rgba(255,209,0,0.03); }
+  .race-date { text-align: center; }
+  .race-month { font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gray); }
+  .race-day   { font-family:'Bebas Neue',sans-serif; font-size:2.2rem; line-height:1; color:var(--white); }
+  .race-year  { font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; color:var(--gray); }
+  .race-status { font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:0.3rem; }
+  .race-status.completed { color:#4ade80; }
+  .race-status.upcoming  { color:var(--gold); }
+  .race-name  { font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:700; letter-spacing:0.5px; margin-bottom:0.2rem; }
+  .race-venue { font-size:0.82rem; color:var(--gray); }
+  .race-result { text-align:right; }
+  .race-pos   { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:1px; }
+  .race-time  { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:var(--gold); line-height:1; }
+  .race-note  { font-family:'Barlow Condensed',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); }
+  .race-result.gold .race-time { color:var(--gold); }
+  .race-filter-btn {
+    font-family:'Barlow Condensed',sans-serif; font-size:0.78rem; font-weight:700;
+    letter-spacing:2px; text-transform:uppercase; padding:0.5rem 1.2rem;
+    background:var(--dark3); border:1px solid rgba(255,255,255,0.08);
+    color:var(--gray); cursor:pointer; transition:all 0.2s; border-radius:4px;
+  }
+  .race-filter-btn:hover, .race-filter-btn.active {
+    background:rgba(255,209,0,0.1); border-color:var(--gold); color:var(--gold);
+  }
+  @media(max-width:900px) {
+    .race-card { grid-template-columns: 60px 1fr; gap:1rem; padding:1rem 1.2rem; }
+    .race-result { display:none; }
+    .race-day { font-size:1.8rem; }
+    #calendar { padding:3.5rem 1.2rem; }
+  }
   /* ─── ANIMATIONS ─── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -1677,6 +1723,7 @@ border-radius:16px;
     <li><a href="#news">News</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="press.html">Press</a></li>
   </ul>
   <div class="nav-menu-btn" id="menuBtn">
     <span></span><span></span><span></span>
@@ -1693,6 +1740,7 @@ border-radius:16px;
   <a href="#news" class="mobile-link">News</a>
   <a href="#gallery" class="mobile-link">Gallery</a>
   <a href="#contact" class="mobile-link">Contact</a>
+  <a href="press.html" class="mobile-link">Press Kit</a>
 </div>
 
 <!-- ─── HERO ─── -->
@@ -1719,6 +1767,14 @@ border-radius:16px;
     <div class="hero-btns">
       <a href="#achievements" class="btn-primary">View Achievements</a>
       <a href="#contact" class="btn-outline">Get In Touch</a>
+      <a href="Bossman_Kusi_Appiah_CV.pdf" download class="btn-outline" style="display:inline-flex;align-items:center;gap:0.5rem;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
+      </a>
+      <a href="press.html" class="btn-outline" style="display:inline-flex;align-items:center;gap:0.5rem;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"/><path d="M4 11H2v8a2 2 0 0 0 2 2h12"/></svg>
+        Press Kit
+      </a>
     </div>
   </div>
 
@@ -3079,6 +3135,67 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
   </div>
 </section>
 
+<!-- ─── RACE CALENDAR ─── -->
+<section id="calendar" style="background:var(--dark2); padding:6rem 4rem;">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="fade-in" style="margin-bottom:3rem;">
+      <p class="section-label">Schedule</p>
+      <h2 class="section-title">Race <span class="title-accent">Calendar</span></h2>
+      <p style="color:rgba(245,245,240,0.5); margin-top:0.5rem; font-size:0.95rem; line-height:1.7; max-width:560px;">
+        Upcoming competitions and events for the 2026 season. Follow Bossman's journey to the world stage.
+      </p>
+    </div>
+    <div id="raceList" style="display:flex; flex-direction:column; gap:1px;" class="fade-in">
+
+      <div class="race-card" data-status="completed">
+        <div class="race-date"><div class="race-month">FEB</div><div class="race-day">07</div><div class="race-year">2026</div></div>
+        <div class="race-info">
+          <div class="race-status completed">✓ Completed</div>
+          <div class="race-name">400m Hurdles — Zone 2 Final</div>
+          <div class="race-venue">📍 Ashanti Region Schools & Colleges Athletics · Zone 2</div>
+        </div>
+        <div class="race-result gold"><div class="race-pos">🥇 1st</div><div class="race-time">52.17s</div><div class="race-note">New Record</div></div>
+      </div>
+
+      <div class="race-card" data-status="completed">
+        <div class="race-date"><div class="race-month">FEB</div><div class="race-day">26</div><div class="race-year">2026</div></div>
+        <div class="race-info">
+          <div class="race-status completed">✓ Completed</div>
+          <div class="race-name">400m Hurdles — Ashanti Region Super Zonal</div>
+          <div class="race-venue">📍 Baba Yara Stadium · Kumasi, Ghana</div>
+        </div>
+        <div class="race-result gold"><div class="race-pos">🥇 1st</div><div class="race-time">51.69s</div><div class="race-note">Regional Record</div></div>
+      </div>
+
+      <div class="race-card" data-status="completed">
+        <div class="race-date"><div class="race-month">MAR</div><div class="race-day">14</div><div class="race-year">2026</div></div>
+        <div class="race-info">
+          <div class="race-status completed">✓ Completed</div>
+          <div class="race-name">400m Hurdles — National Open Championships</div>
+          <div class="race-venue">📍 Cape Coast Sports Stadium · Cape Coast, Ghana</div>
+        </div>
+        <div class="race-result gold"><div class="race-pos">🥇 1st</div><div class="race-time">52.34s</div><div class="race-note">World U20 Qualifier</div></div>
+      </div>
+
+      <div class="race-card" data-status="upcoming">
+        <div class="race-date"><div class="race-month">AUG</div><div class="race-day">01</div><div class="race-year">2026</div></div>
+        <div class="race-info">
+          <div class="race-status upcoming">⏳ Upcoming</div>
+          <div class="race-name">400m Hurdles — World U20 Athletics Championships</div>
+          <div class="race-venue">📍 Hayward Field · Eugene, Oregon, USA 🌍</div>
+        </div>
+        <div class="race-result upcoming-res"><div class="race-pos" style="font-size:1.6rem;">🌍</div><div class="race-time" style="color:var(--gold);">TBD</div><div class="race-note">World Stage</div></div>
+      </div>
+
+    </div>
+    <div style="display:flex; gap:0.75rem; margin-top:2rem; flex-wrap:wrap;" class="fade-in">
+      <button class="race-filter-btn active" onclick="filterRaces('all',this)">All Events</button>
+      <button class="race-filter-btn" onclick="filterRaces('completed',this)">✓ Completed</button>
+      <button class="race-filter-btn" onclick="filterRaces('upcoming',this)">⏳ Upcoming</button>
+    </div>
+  </div>
+</section>
+
 <!-- ─── SPONSORS / SUPPORT ─── -->
 <section id="sponsors" style="background:var(--dark); padding:5rem 4rem; border-top:1px solid rgba(255,255,255,0.04);">
   <div style="max-width:1200px; margin:0 auto; text-align:center;" class="fade-in">
@@ -3232,6 +3349,18 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
 </footer>
 
 <!-- Back to top button — must be before the script -->
+<!-- WhatsApp floating button -->
+<a href="https://wa.me/233533327517?text=Hi%20Bossman%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20get%20in%20touch."
+  target="_blank" rel="noopener" id="whatsappBtn" title="Chat on WhatsApp"
+  style="position:fixed;bottom:5.5rem;left:1.5rem;z-index:200;width:52px;height:52px;border-radius:50%;background:#25D366;box-shadow:0 4px 16px rgba(37,211,102,0.4);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;"
+  onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 24px rgba(37,211,102,0.55)'"
+  onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(37,211,102,0.4)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.857L.057 23.882l6.197-1.448A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 0 1-5.007-1.374l-.36-.213-3.68.86.896-3.57-.234-.369A9.77 9.77 0 0 1 2.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/>
+  </svg>
+</a>
+
 <button id="backToTop" style="
   position:fixed; bottom:2rem; right:2rem; z-index:200;
   width:46px; height:46px;
@@ -3242,6 +3371,15 @@ A strong run over the barriers and a powerful finish showcased the rising hurdli
 " title="Back to top">↑</button>
 
 <script>
+  // ── Race Calendar Filter ──
+  window.filterRaces = function(status, btn) {
+    document.querySelectorAll('.race-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.race-card').forEach(card => {
+      card.style.display = (status === 'all' || card.dataset.status === status) ? 'grid' : 'none';
+    });
+  };
+
   // ── Scroll fade-in ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
