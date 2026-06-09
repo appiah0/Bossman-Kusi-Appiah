@@ -1569,6 +1569,76 @@ border-radius:16px;
     .race-day { font-size:1.8rem; }
     #calendar { padding:3.5rem 1.2rem; }
   }
+
+  /* ─── LIVE BANNER ─── */
+  #liveBanner {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    background: linear-gradient(135deg, #1a0000, #0d0000);
+    border-bottom: 2px solid var(--red);
+    padding: 0.75rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: slideDown 0.5s ease;
+    box-shadow: 0 4px 24px rgba(232,0,29,0.3);
+  }
+  #liveBanner.active { display: flex; }
+  @keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0);     opacity: 1; }
+  }
+  .live-banner-left {
+    display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
+  }
+  .live-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 8px rgba(232,0,29,0.8);
+    animation: pulse 1.2s infinite;
+    flex-shrink: 0;
+  }
+  .live-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--red);
+    background: rgba(232,0,29,0.12);
+    border: 1px solid rgba(232,0,29,0.35);
+    padding: 0.2rem 0.6rem; border-radius: 4px;
+  }
+  .live-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 1px;
+    color: var(--white);
+  }
+  .live-text span { color: rgba(245,245,240,0.55); font-weight: 400; }
+  .live-watch-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--gold); color: var(--dark);
+    padding: 0.45rem 1.1rem; border-radius: 6px;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .live-watch-btn:hover { background: #e6bc00; transform: scale(1.03); }
+  .live-banner-right { display: flex; align-items: center; gap: 0.75rem; }
+  .live-dismiss {
+    background: none; border: none; color: rgba(245,245,240,0.4);
+    font-size: 1.1rem; cursor: pointer; padding: 2px 6px;
+    transition: color 0.2s; line-height: 1;
+  }
+  .live-dismiss:hover { color: var(--white); }
+  @media(max-width:600px) {
+    #liveBanner { padding: 0.6rem 1rem; }
+    .live-text span { display: none; }
+    .live-text { font-size: 0.82rem; }
+  }
   /* ─── ANIMATIONS ─── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -1784,6 +1854,32 @@ border-radius:16px;
 <body>
 
 <!-- ─── NAV ─── -->
+<!-- ═══════════════════════════════════════════════════════════
+     LIVE BANNER — appears automatically when countdown hits zero
+     TO CHANGE STREAM LINK: find 'STREAM_LINK_HERE' below and
+     replace it with the actual YouTube/World Athletics stream URL
+     ═══════════════════════════════════════════════════════════ -->
+<div id="liveBanner">
+  <div class="live-banner-left">
+    <div class="live-dot"></div>
+    <span class="live-badge">LIVE</span>
+    <span class="live-text">
+      World U20 Athletics Championships
+      <span>· Eugene, Oregon USA 🌍</span>
+    </span>
+  </div>
+  <div class="live-banner-right">
+    <!--
+      REPLACE the href below with the actual live stream URL
+      e.g. https://www.youtube.com/watch?v=XXXXXXXXX
+    -->
+    <a href="STREAM_LINK_HERE" target="_blank" rel="noopener" class="live-watch-btn" id="liveWatchBtn">
+      ▶ Watch Live
+    </a>
+    <button class="live-dismiss" onclick="document.getElementById('liveBanner').classList.remove('active')" title="Dismiss">✕</button>
+  </div>
+</div>
+
 <nav aria-label="Main navigation">
   <div class="nav-logo">BK<span>A</span></div>
   <ul class="nav-links">
@@ -2658,8 +2754,6 @@ border-radius:16px;
         style="width:100%; height:100%; object-fit:cover; object-position:top; border-radius:16px;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.85) 0%,rgba(10,10,10,0.1) 60%);"></div>
       <div style="position:absolute;bottom:1.5rem;left:2rem;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#4ade80;margin-bottom:0.3rem;">UBaSSA UG @75 GAMES 2023</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;">UBaSSA GAMES 2023 Results</div>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:var(--gold);">BEST FOOTBALL PLAYERS</div>
         <div style="font-size:0.8rem;color:rgba(245,245,240,0.5);margin-top:0.2rem;">UBaSSA UG @75 GAMES 2023 JHS</div>
       </div>
@@ -2877,7 +2971,39 @@ border-radius:16px;
   <div style="max-width:900px; margin:0 auto; text-align:center; position:relative; z-index:1;" class="fade-in">
     <p class="section-label" style="justify-content:center;">Next Event</p>
     <h2 class="section-title" style="margin-bottom:0.5rem;">World Stage <span class="title-accent">Awaits</span></h2>
-    <p style="color:rgba(245,245,240,0.45); margin-bottom:3rem; font-size:0.95rem; letter-spacing:1px;">World U20 Athletics Championships 2026 · Eugene, Oregon, USA</p>
+    <!-- Date display -->
+    <div id="cdDateLine" style="margin-bottom:1.5rem;">
+      <div style="display:inline-flex;align-items:center;gap:0.75rem;background:rgba(255,209,0,0.07);border:1px solid rgba(255,209,0,0.2);padding:0.6rem 1.4rem;border-radius:30px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">5 August 2026</span>
+        <span style="width:1px;height:14px;background:rgba(255,209,0,0.3);display:inline-block;"></span>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.82rem;letter-spacing:1px;color:rgba(245,245,240,0.55);">Hayward Field · Eugene, Oregon, USA</span>
+      </div>
+    </div>
+
+    <!-- LIVE mode message (hidden until countdown hits zero) -->
+    <div id="cdLiveMsg" style="display:none;margin-bottom:2rem;">
+      <div style="display:inline-flex;align-items:center;gap:1rem;background:rgba(232,0,29,0.1);border:1px solid rgba(232,0,29,0.35);padding:0.8rem 1.8rem;border-radius:30px;animation:pulse 1.5s infinite;">
+        <div style="width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 10px rgba(232,0,29,0.8);"></div>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:3px;color:var(--red);">LIVE NOW</span>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:1px;color:rgba(245,245,240,0.7);">World U20 Athletics Championships Underway</span>
+      </div>
+      <div style="margin-top:1rem;">
+        <a href="STREAM_LINK_HERE" target="_blank" rel="noopener" id="cdWatchBtn"
+          style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--red);color:#fff;padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:background 0.2s;box-shadow:0 4px 20px rgba(232,0,29,0.35);">
+          ▶ Watch Live Stream
+        </a>
+        <p style="margin-top:0.75rem;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);">
+          <!--
+            UPDATE STREAM LINK: find href="STREAM_LINK_HERE" above
+            and replace with actual live stream URL before the event
+          -->
+          Go Bossman! 🇬🇭 · Representing Ghana at the World Stage
+        </p>
+      </div>
+    </div>
+
+    <p id="cdSubtitle" style="color:rgba(245,245,240,0.45); margin-bottom:3rem; font-size:0.95rem; letter-spacing:1px;">2026 World U20 Athletics Championships · Eugene, Oregon, USA</p>
     <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.5rem;">
 
       <div style="background:var(--dark3); border:1px solid rgba(255,209,0,0.15); padding:2rem 2.5rem; min-width:110px; border-radius:16px;">
@@ -2903,7 +3029,7 @@ border-radius:16px;
     </div>
     <div style="display:inline-flex; align-items:center; gap:0.75rem; background:rgba(255,209,0,0.08); border:1px solid rgba(255,209,0,0.2); padding:0.75rem 1.5rem; border-radius:16px;">
       <span style="font-size:1.2rem;">📍</span>
-      <span style="font-family:'Barlow Condensed',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold);">🌍 World U20 Athletics Championships · Eugene, Oregon, USA • August 5th, 2026</span>
+      <span style="font-family:'Barlow Condensed',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold);">🌍 2026 World U20 Athletics Championships · USA </span>
     </div>
   </div>
 </section>
@@ -3170,7 +3296,7 @@ border-radius:16px;
 
       <!-- CARD 4 — Elite Schools broke own record — X — always visible -->
       <a href="https://x.com/i/status/2026993884299928017" target="_blank" rel="noopener" class="mc-item">
-        <img src="images/Elite-Profile.jpg" alt="Elite Schools League" class="mc-thumb"/>
+        <img src="images/record-poster.jpg" alt="Elite Schools League" class="mc-thumb"/>
         <span class="mc-tag" style="background:rgba(232,0,29,0.18);color:#f87171;">🔥 Broke Own Record</span>
         <div class="mc-body">
           <div class="mc-source-row">
@@ -3250,7 +3376,7 @@ border-radius:16px;
 
       <!-- CARD 9 — Elite Schools 800m Final — X — hidden -->
       <a href="https://x.com/i/status/2027406495030157776" target="_blank" rel="noopener" class="mc-item">
-        <img src="images/Elite-Profile.jpg" alt="Elite Schools League" class="mc-thumb"/>
+        <img src="images/800m-jersey.jpg" alt="Elite Schools League" class="mc-thumb"/>
         <span class="mc-tag" style="background:rgba(124,58,237,0.2);color:#a78bfa;">🏃 800m Gold</span>
         <div class="mc-body">
           <div class="mc-source-row">
@@ -3266,7 +3392,7 @@ border-radius:16px;
 
       <!-- CARD 10 — Elite Schools Double Gold — X — hidden -->
       <a href="https://x.com/i/status/1895490542647328912" target="_blank" rel="noopener" class="mc-item">
-        <img src="images/Elite-Profile.jpg" alt="Elite Schools League" class="mc-thumb"/>
+        <img src="images/800m-jersey-fist.jpg" alt="Elite Schools League" class="mc-thumb"/>
         <span class="mc-tag" style="background:rgba(249,115,22,0.2);color:#fb923c;">🎯 Double Gold</span>
         <div class="mc-body">
           <div class="mc-source-row">
@@ -3282,7 +3408,7 @@ border-radius:16px;
 
       <!-- CARD 11 — Elite Schools Interview — X — hidden -->
       <a href="https://x.com/i/status/2014082222286840311" target="_blank" rel="noopener" class="mc-item">
-        <img src="images/Elite-Profile.jpg" alt="Elite Schools League" class="mc-thumb"/>
+        <img src="images/interview.jpg" alt="Elite Schools League" class="mc-thumb"/>
         <span class="mc-tag" style="background:rgba(8,145,178,0.2);color:#22d3ee;">🎙️ Interview</span>
         <div class="mc-body">
           <div class="mc-source-row">
@@ -3606,8 +3732,31 @@ border-radius:16px;
   if (progSection) progObserver.observe(progSection);
 
   // ── Countdown Timer ──
+  // ═══════════════════════════════════════════════════════════════
+  // COUNTDOWN CONFIG — change this ONE date to update everything:
+  // the timer, the date display, LIVE mode, and the top banner.
+  // Format: 'YYYY-MM-DDTHH:MM:SS'  (24hr, local Ghana time GMT+0)
+  // ═══════════════════════════════════════════════════════════════
+  const EVENT_DATE = new Date('2026-08-05T09:00:00');
+
+  function activateLiveMode() {
+    // Show LIVE message in countdown section
+    const liveMsg  = document.getElementById('cdLiveMsg');
+    const subtitle = document.getElementById('cdSubtitle');
+    const dateLine = document.getElementById('cdDateLine');
+    if (liveMsg)  liveMsg.style.display  = 'block';
+    if (subtitle) subtitle.style.display = 'none';
+    if (dateLine) dateLine.style.display = 'none';
+    // Show floating top banner
+    const banner = document.getElementById('liveBanner');
+    if (banner) banner.classList.add('active');
+    // Push nav down to make room for banner
+    const nav = document.querySelector('nav');
+    if (nav) nav.style.top = (banner ? banner.offsetHeight : 50) + 'px';
+  }
+
   function updateCountdown() {
-    const target = new Date('2026-08-05T09:00:00');
+    const target = EVENT_DATE;
     const now = new Date();
     const diff = target - now;
     if (diff <= 0) {
@@ -3615,6 +3764,7 @@ border-radius:16px;
         const el = document.getElementById(id);
         if (el) el.textContent = '00';
       });
+      activateLiveMode();
       return;
     }
     const days  = Math.floor(diff / 86400000);
@@ -3924,5 +4074,7 @@ border-radius:16px;
   // Image fade transition
   document.getElementById('lb-img').style.transition = 'opacity 0.15s';
 </script>
+</body>
+</html>pt>
 </body>
 </html>
